@@ -1,0 +1,3385 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    159809,       3377]
+NotebookOptionsPosition[    158684,       3335]
+NotebookOutlinePosition[    159032,       3350]
+CellTagsIndexPosition[    158989,       3347]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Data", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<C:\\\\Users\\\\jkunimune\\\\Dropbox\\\\Work\\\\EAE\\\\Hourly_Data\\\\\
+clean_derkshin_data.csv\>\"", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.695814997778492*^9, 3.6958150000273924`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPolarPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Data", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+     RowBox[{"Data", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "3"}], "}"}]}], "]"}], "]"}], ",", 
+     RowBox[{"Data", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "4"}], "}"}]}], "]"}], "]"}], ",", 
+     RowBox[{"Data", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "5"}], "}"}]}], "]"}], "]"}], ",", 
+     RowBox[{"Data", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "6"}], "}"}]}], "]"}], "]"}], ",", 
+     RowBox[{"Data", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "7"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+   RowBox[{"PolarAxes", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"PolarTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"n", " ", 
+           RowBox[{"\[Pi]", "/", "180"}]}], ",", 
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{"90", "-", "n"}], ",", "360"}], "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", "0", ",", "360", ",", "15"}], "}"}]}], "]"}], ",", 
+      "Automatic"}], "}"}]}], ",", 
+   RowBox[{"PolarGridLines", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", 
+    RowBox[{"Style", "[", 
+     RowBox[{
+     "\"\<Average Pollution Concentration vs. Wind Direction\>\"", ",", 
+      "14"}], "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6958145538293343`*^9, 3.6958145622965918`*^9}, {
+   3.695814613866858*^9, 3.6958147898588924`*^9}, {3.6958150071607924`*^9, 
+   3.6958150091600924`*^9}, {3.695815105750392*^9, 3.6958151233762856`*^9}, {
+   3.6958151648799777`*^9, 3.695815178689946*^9}, {3.6958152193380823`*^9, 
+   3.6958153032773333`*^9}, {3.69581534600469*^9, 3.6958153603559327`*^9}, {
+   3.6958155334394827`*^9, 3.695815541877775*^9}, {3.6958155813012867`*^9, 
+   3.6958156065837665`*^9}, {3.6958156530499744`*^9, 3.695815706469059*^9}, {
+   3.695815738988286*^9, 3.695815785240986*^9}, {3.695815823127486*^9, 
+   3.695815846856386*^9}, {3.6958158921256857`*^9, 3.695815930391486*^9}, 
+   3.6958164320203495`*^9, {3.6958168828078675`*^9, 3.6958169246174335`*^9}, {
+   3.6958176934768677`*^9, 3.6958177133296676`*^9}, {3.6958178122724915`*^9, 
+   3.6958178276837854`*^9}, {3.6958405704109116`*^9, 3.695840573474511*^9}, {
+   3.695840604916911*^9, 3.6958406852403116`*^9}, {3.6958410933840113`*^9, 
+   3.695841135397354*^9}, {3.6958412046030684`*^9, 3.6958412427338295`*^9}, {
+   3.6958413049212804`*^9, 3.695841312405725*^9}, {3.695841448253844*^9, 
+   3.6958414719693017`*^9}, {3.6958419022810287`*^9, 3.695841941311081*^9}, {
+   3.69584203885253*^9, 3.6958420676348166`*^9}, {3.6958421637821417`*^9, 
+   3.695842165812055*^9}, {3.69584224018064*^9, 3.6958422679183197`*^9}, 
+   3.695842298099615*^9, {3.6958424268790584`*^9, 3.6958424287666707`*^9}, {
+   3.6958425140098267`*^9, 3.695842519950365*^9}, {3.6958425795809503`*^9, 
+   3.695842580111354*^9}, {3.695842611465225*^9, 3.695842612939135*^9}, {
+   3.6958426517681923`*^9, 3.695842724394962*^9}, {3.695842761261404*^9, 
+   3.6958427620697136`*^9}, {3.695842813720357*^9, 3.6958428224664135`*^9}, {
+   3.6958428585464473`*^9, 3.6958428908156557`*^9}, {3.6958430358919992`*^9, 
+   3.695843129991974*^9}, {3.6958434455985794`*^9, 3.695843446815442*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {3.82809542914, 0.}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {3.6976562405054594`, 0.990784003531339}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {3.315227889746332, 1.91404771457}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {2.7068722369741205`, 2.7068722369741205`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {1.91404771457, 3.315227889746332}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.990784003531339, 3.6976562405054594`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {0., 3.82809542914}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.990784003531339, 3.6976562405054594`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-1.91404771457, 3.315227889746332}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-2.7068722369741205`, 2.7068722369741205`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-3.315227889746332, 1.91404771457}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-3.6976562405054594`, 0.990784003531339}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {-3.82809542914, 0.}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-3.6976562405054594`, -0.990784003531339}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-3.315227889746332, -1.91404771457}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-2.7068722369741205`, -2.7068722369741205`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-1.91404771457, -3.315227889746332}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.990784003531339, -3.6976562405054594`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {0., -3.82809542914}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.990784003531339, -3.6976562405054594`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {1.91404771457, -3.315227889746332}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {2.7068722369741205`, -2.7068722369741205`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {3.315227889746332, -1.91404771457}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {3.6976562405054594`, -0.990784003531339}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {3.82809542914, 0.}}]}}, {
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0., NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0.765619085828, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 1.531238171656, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 2.296857257484, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 3.062476343312, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}}}, {}, {{}, 
+    GraphicsComplexBox[CompressedData["
+1:eJw91Xk01I33B3BjiWwJoZRKZEmlbbKM7niIUJZIWZ72eiokekoly5ekRSQq
+osi+pKRFanI/Y8nOWIskjGHsM2Oy1fB9fuf767nn3PM+5/57X/fc1Ue9954Q
+FhIS6vqn/y9DFvFtO0/foVjUFjy0zxkCG576DY89dOBqzzqsvMEG/2tmirIn
+mqGQ3KifnzYEGc/X1DAVOoH6KFeXZc8Gp4LW7rr+bggXbRO7qtEHTOE1QaxY
+JhinCTEcznbDZ5X2fVyLATi68oBbTXcHRJ75xlSjD8HN+79uEpebId7Na20Z
+eQgM35xboh1QApHVL1u4eSMg9P91zdoxoerLMGyv+hQmSC1FUtXH5H3ZAxAv
+Vjx/2LAR/zhsnpS9kg0m5XsuS379ikmjGZiY2AcVWrlXHtn04I+y+V5dxR6o
+JEt23XbtQ/VvmlEN5R3wxLORFLNxAJP/Plj4y6oReOXHDq8lBrDuequ1/Rc6
+2Mhs8pTeM4jia/OHyVoRlGWxqk8YYYN4O1l17TtPOuo3VZUHvWbjsfAkbzqT
+gY06m7rfbBnAP+/1DiYdaMfH4aVO9hMsNPa7n+Fj0oN5/8n8Qrvdh293H9vg
+voSJlrUFlXtEuvEe1vUM8ZgIi0I6f0h8xuL15y/s292PEWE7Sh2NGeh6rdHH
+SXYQr6eZ9io8o2NbRvu7i7qD+OyMc5VvSQLtXPDWJq/gftQg9T8mPiLEzuiX
+UuNZGBuyXHXcpwGYPpH2HbJMJI+FrntMagPL66G3u+aZ2F5VEKdY2Q0H3nuL
+ph79ipoUs7rLDt2wpz63qnauFfXeivqekWaCmo1VZbNbHVq0f916XLcPhi5v
+3MjIIvCaUYL1xycD8FRqu/GJRRm0335eHqx8JFSYRkn0Cz8ZViFMlQsU+5N5
+pQ0KGbLDJ77Pw53oxRt7Z1jgLpx2IVB/Dnhmy4TTv3HhY9ccq5I7ByrxujLW
+9/gwGxUdrHZtGn4N13gMOPBB73uI55A0F6ZcW+ToGnzI2b+p+D9/DEBl8ZEF
+Y6aTwN4/xyG2dMP7llHe/p98SNpXNtcfVwdK9hlsqSnev57WFV+x32o0AR5u
+D/qdV9Zg8oGHTvcYE3DlbYn3ovZOtBGZ1XCKnoBXJr2WFnH9uDwljJnROggq
+7Xyb0DwWRqVnW3JY/cDMtw79ZTWMP3cPPTzezwRLf93c78ZcfBrx1O/mgm4Q
+DKxwYYhM4hYey0v1Uj14FSkfi4n/gQ4Bxwak7R5RHh7Wditrn8Jnp7iX0nY3
+41FniUyu+0/ca7Fj8aZdvRgZ52PpvmIGpyi+t0WPjKGj2OQeFbtZnNn81/E1
+FRxMby5RwrkJvFnA+pKcykfRPUX3Axy4GP5RbflD5gz2m3rX9/SNYo/rFtIZ
+/Sm8KDmi6dbTjWxRx71jnrN4WnUFyT21CUfrLMiUQ7PIv1QsJKWcR2t/r/zt
+IHcGzeXVlci7m0CoVtvqjsMMPiouXLLxbC88lbtsFZkxh20fNkmRC7gQNDO8
+cdFuEvFKjO+nKy6AwMp8Z5/wX9hSziqamBeill9k3P3UzsP7Prm3djgKUbWi
+n9oYyfeisuzR40bN0zCwo0b/JL0b9xLcRfF0capkpB47WB5pv/2AnFmwnP1Z
+yu3o7SHC/jWAuR3fTlhnwlRMiFR9CAMu2K7wFQophL9NXryP1WTAy8PbVo88
+R8gt49aYnauBgylne4VOEyBIV0yIiiyF9kmzyNVZpZDT9urBhUAC8rSXSl1f
+VwGZzVvWq9PfQzI7fdhTowaukq6ZSZa8grAbN0Lis+rAV38vS204DWTe6fcr
+r2j415PM2DrjpSHVQAjkSdYFKbhXOUFuXqYO4qKaND3WvkG3TfNaMncrYL/f
+pevkbR9Q2iT49N2SUjijUJGZGkugpN6daY1cOoi/u7Tjsmw5qi877sSZ+gDu
+nh6u+QaVSL+t91zg8gqy/efJAferUTU9mj1rlQbtHdviV5fV4qbnQUV/HDlH
+2c2+pjVeUIeMq893bRBNx7qj3w+vrq3DhREeoZmjbzHaKELhUFADvvqy3pYf
+QyDLtvph8dta3GOh5j9GKce3/OkYf7sqzHdUqBa6Wo2Lg7YtX2r4CWPJFwZs
+5+rQ0nOkTN6BjrvUdUdTlKpxQVG/U4agANkfdLjssQZ8T/bWbgnLQAt/nS5/
+mUYkulK3n2oIoVU6FrdLBDbgEb7Ite3kDHiSOEMx3sVAUc/Sdt/XhZAvWiq+
+50UVyken9wVnfYSyZTrnQ3Z+wg7J9PPq+SXw9X+Jpf+bA4cuGFdSJLBaKppm
+0V4DQ5uGH3sF5GNgsGHOmsxPcKti6S2LQ+loVGhvb7WnHjbu3nxYmnad9tvP
++mQnF7+G+5Q78VEvK8onwDuGovA5tBq4KiVrpmt4oGXkQphYN4C7so2JIIAF
+q94ZXHwR2gRm87pq+RLdoCqQvSyW1wTRB4rTa03boGFN6kHOrRbQ9lyk8InS
+CENBTIsvBt1wvEy/xvpDE2y4sSBwC28QAoPqQ1cxm4D3UbOZfJ8N0+PfD2U6
+06HaZcvbas7Qv54Ed5Q+rLAdh9YL4OGh+AkVXYrIZmZcqHfeFDG8uh2NXQyY
+egWD4GYY8qAp9xu2cMI7lt9kQX3RqIjMP3c1JytyKl6pH1wpCjHMvUOY+7TT
+1dG0G7SPZCQka43gAymB302LZnCWi3xdemUIs0v7f00aVkPGSbZu/EMeklLN
+bhz1TKAQruoSPp3TSPrQEjDq3YTxLqL3hDVmcXeeUSMrqQetkx6sXUeeRhrB
+Wpvs0Y+nGTXu2WcmMOflzrOnLIfRa4ilTzXlYF5iqK3OAA85y8wLFYrGsYJ/
+trwk5CcOvAhMsCwbx33xpT1mvaMYfElGnEO0Yu1zQnadYAJlMgyr3DbXok7Y
+xc9pVB4qqE+eNFRPozGDfQsjy7iofDnMw1yuCjr51I/zJ7goOXyDFOjUDv48
+EZ9KkwnUUQxi1m3vB0q46UGbR3xcuop9L8uKCwMyxZ0Omnz8k+WqZio8DSpC
+idtizIbwrRbjTFXxJFw56+T1vIOBeqkrcndoDYBTbnhXTEcx+uv4so98Z4H6
+pfmQeLd82m8/ps7nDQpocZQ72o0pJK9J6K9zW5scXgma5ie/5B/jgpnL3Xbt
+iH/2ZSa1jRJBopLv5MpKKPJgk/gzx1928+Arwj77YmgGdjh4TrF750C6urCs
+NOcnLBOW09fcPgU1XbV8xnoB9GS52L76wgHHU4tiSYZCVJXXZ/fu+uf/1rv3
+jIKREJXT+HpEuq8NHg3XG2hPCVN/exqvNPO1KmODruvP8g4/Ov69b/WBQc40
+HMre19Oq1YurSHm3Epf8gJkAlZmkA2w8radBbg7jQCO/gRrwfhh1zbbMjCQO
+A8li3nfb3xzsfGpJucfrAzO47LdSg4fn2Fvf+BE98NKp1Xjw6DROPjobs8S8
+FaSsGoY+rJ3DzBByVIdaIkVGj2xCCZxBtVU9eYtTWvF1+EDTr9w5jBsv8u/N
+YaHvtOKR6VIB2lgvU/1Lj42LpZSO2o/zcTgbRMvGeWg9MhC3P3oSV8rdle5M
+/oHl4iy5WU0ekgcXMel3eTjm7MwVPsfCgwLOzcS987iR4XhEvq4fx8fl60mp
+c3hzvEiHltCKdu8zNXLm57Dgql5mucpLWvGOwJlU4Wl8IytMthhngFSSuUfl
+02l84XpKijLWA+ODjReIlCnM6gjxqrcehiU6Li/2PRnEtvayFJUgFixXkyBx
+PfqwNHeDkIczG3Z9sk68sqAHhxvkj6kGjMLWxlBv8V3fMC9Daah6OR9Uj6id
+N5RuxtCulv2JpJ+QH+ycE3angPbbD9e5Z7liaw5lgnbo/U5HCar7XxrrXp3u
+hk/61NumO8WpO+kLh+s8OGC1Xrp8NHIBFbvEfGn3ZwHbez9wxMSp+Vbv0rar
+zMOODQmyduHCVAHbTOaGhjBVufKG8HnfOdD9eXyBabgIdRE3al1axCR8N7Ft
+MJgRo1JFJ00zBeMg8fzOJVARp74uVY/iW3XDiNfKJtvN4v96Mrf7IVl6QoJq
+2vjQd+O2HmQYSnkK3MSozbLR4sUq4+hvR4RrGolRU+i07w0h0+gowRqreC5E
+rZWKfW0w/xOruYNtsScFYJnqbzN0jUTUWIVczyJPQWvFoEHgMlHCz/zFiYXT
+XDhtovUYXkgQrZ03lHNovWDgvVGp4a4kcfzY/QOjybmUY/L5igrSC4mwy/c2
+ZO3vxeSAEHI8SZI4laEVNxbLw6sNcUsrry8kbq5a7jcVL8Cp6N71b1MWEvSo
+HlrJBRLxrWjDxY56UeKQ+59pbevFiT+mlwwonhchsovXREtNSRDlnBar4uZf
+2LVq+4zeXWki6/MJtZZqPga6lEXE7Jciqnwe2H7dxcS4FVHvr6dKEyM7W1U1
+HiLtQaKq5cwKaaK7bf/rqhYmVJb2qapXSBPeC5ISW3l8ONl1d+QpIU7U9Uaa
+23n9BKgU3mzsJ0JEJfR7e+0TohYpbf30fPss2k1piT/bMQ+PcgdNd0VModrt
+I+bpx0WpP/afDkxtGUXnRk7woQBR6tKVXecSzVlo8jpvtb+WLHUrKXtJw8oy
+2m8//wXNOz0/
+     "], {{}, {}, 
+      {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       0.009166666666666668], AbsoluteThickness[1.6], 
+       LineBox[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+         19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 
+        36, 37}]}, 
+      {RGBColor[0.880722, 0.611041, 0.142051], PointSize[
+       0.009166666666666668], AbsoluteThickness[1.6], 
+       LineBox[{38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 
+        53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 
+        70, 71, 72, 73, 74}]}, 
+      {RGBColor[0.560181, 0.691569, 0.194885], PointSize[
+       0.009166666666666668], AbsoluteThickness[1.6], 
+       LineBox[{75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 
+        90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 
+        106, 107, 108, 109, 110, 111}]}, 
+      {RGBColor[0.922526, 0.385626, 0.209179], PointSize[
+       0.009166666666666668], AbsoluteThickness[1.6], 
+       LineBox[{112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 
+        124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 
+        138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148}]}, 
+      {RGBColor[0.528488, 0.470624, 0.701351], PointSize[
+       0.009166666666666668], AbsoluteThickness[1.6], 
+       LineBox[{149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 
+        161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 
+        175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185}]}, 
+      {RGBColor[0.772079, 0.431554, 0.102387], PointSize[
+       0.009166666666666668], AbsoluteThickness[1.6], 
+       LineBox[{186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 
+        198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 
+        212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 
+        222}]}}], {}, {}, {{}, {}}}, {}, {}, {{}, {}}, {}, {{{
+      LineBox[{Scaled[{0, 0}, {3.82809542914, 0.}], 
+        Scaled[{0.006, 0.}, {3.82809542914, 0.}]}], 
+      LineBox[{Scaled[{0, 0}, {3.6976562405054594`, 0.990784003531339}], 
+        Scaled[{0.005795554957734409, 0.0015529142706151244`}, {
+         3.6976562405054594`, 0.990784003531339}]}], 
+      LineBox[{Scaled[{0, 0}, {3.315227889746332, 1.91404771457}], 
+        Scaled[{0.005196152422706632, 0.003}, {3.315227889746332, 
+         1.91404771457}]}], 
+      LineBox[{Scaled[{0, 0}, {2.7068722369741205`, 2.7068722369741205`}], 
+        Scaled[{0.004242640687119285, 0.004242640687119285}, {
+         2.7068722369741205`, 2.7068722369741205`}]}], 
+      LineBox[{Scaled[{0, 0}, {1.91404771457, 3.315227889746332}], 
+        Scaled[{0.003, 0.005196152422706632}, {1.91404771457, 
+         3.315227889746332}]}], 
+      LineBox[{Scaled[{0, 0}, {0.990784003531339, 3.6976562405054594`}], 
+        Scaled[{0.0015529142706151244`, 0.005795554957734409}, {
+         0.990784003531339, 3.6976562405054594`}]}], 
+      LineBox[{Scaled[{0, 0}, {0., 3.82809542914}], 
+        Scaled[{0., 0.006}, {0., 3.82809542914}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.990784003531339, 3.6976562405054594`}], 
+        Scaled[{-0.0015529142706151244`, 
+         0.005795554957734409}, {-0.990784003531339, 3.6976562405054594`}]}], 
+      LineBox[{Scaled[{0, 0}, {-1.91404771457, 3.315227889746332}], 
+        Scaled[{-0.003, 0.005196152422706632}, {-1.91404771457, 
+         3.315227889746332}]}], 
+      LineBox[{Scaled[{0, 0}, {-2.7068722369741205`, 2.7068722369741205`}], 
+        Scaled[{-0.004242640687119285, 
+         0.004242640687119285}, {-2.7068722369741205`, 
+         2.7068722369741205`}]}], 
+      LineBox[{Scaled[{0, 0}, {-3.315227889746332, 1.91404771457}], 
+        Scaled[{-0.005196152422706632, 0.003}, {-3.315227889746332, 
+         1.91404771457}]}], 
+      LineBox[{Scaled[{0, 0}, {-3.6976562405054594`, 0.990784003531339}], 
+        Scaled[{-0.005795554957734409, 
+         0.0015529142706151244`}, {-3.6976562405054594`, 
+         0.990784003531339}]}], 
+      LineBox[{Scaled[{0, 0}, {-3.82809542914, 0.}], 
+        Scaled[{-0.006, 0.}, {-3.82809542914, 0.}]}], 
+      LineBox[{Scaled[{0, 0}, {-3.6976562405054594`, -0.990784003531339}], 
+        Scaled[{-0.005795554957734409, -0.0015529142706151244`}, \
+{-3.6976562405054594`, -0.990784003531339}]}], 
+      LineBox[{Scaled[{0, 0}, {-3.315227889746332, -1.91404771457}], 
+        Scaled[{-0.005196152422706632, -0.003}, {-3.315227889746332, \
+-1.91404771457}]}], 
+      LineBox[{Scaled[{0, 0}, {-2.7068722369741205`, -2.7068722369741205`}], 
+        Scaled[{-0.004242640687119285, -0.004242640687119285}, \
+{-2.7068722369741205`, -2.7068722369741205`}]}], 
+      LineBox[{Scaled[{0, 0}, {-1.91404771457, -3.315227889746332}], 
+        Scaled[{-0.003, -0.005196152422706632}, {-1.91404771457, \
+-3.315227889746332}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.990784003531339, -3.6976562405054594`}], 
+        Scaled[{-0.0015529142706151244`, -0.005795554957734409}, \
+{-0.990784003531339, -3.6976562405054594`}]}], 
+      LineBox[{Scaled[{0, 0}, {0., -3.82809542914}], 
+        Scaled[{0., -0.006}, {0., -3.82809542914}]}], 
+      LineBox[{Scaled[{0, 0}, {0.990784003531339, -3.6976562405054594`}], 
+        Scaled[{0.0015529142706151244`, -0.005795554957734409}, {
+         0.990784003531339, -3.6976562405054594`}]}], 
+      LineBox[{Scaled[{0, 0}, {1.91404771457, -3.315227889746332}], 
+        Scaled[{0.003, -0.005196152422706632}, {
+         1.91404771457, -3.315227889746332}]}], 
+      LineBox[{Scaled[{0, 0}, {2.7068722369741205`, -2.7068722369741205`}], 
+        Scaled[{0.004242640687119285, -0.004242640687119285}, {
+         2.7068722369741205`, -2.7068722369741205`}]}], 
+      LineBox[{Scaled[{0, 0}, {3.315227889746332, -1.91404771457}], 
+        Scaled[{0.005196152422706632, -0.003}, {
+         3.315227889746332, -1.91404771457}]}], 
+      LineBox[{Scaled[{0, 0}, {3.6976562405054594`, -0.990784003531339}], 
+        Scaled[{0.005795554957734409, -0.0015529142706151244`}, {
+         3.6976562405054594`, -0.990784003531339}]}], 
+      LineBox[{
+       Scaled[{0, 0}, {3.82809542914, 0.}], 
+        Scaled[{0.006, 0.}, {3.82809542914, 0.}]}]}, 
+     LineBox[{}], {
+      InsetBox["90", Offset[{8, 0}, {3.82809542914, 0.}], 
+       ImageScaled[{0, Rational[1, 2]}],
+       Background->Automatic], 
+      InsetBox["75", NCache[
+       Offset[{2 2^Rational[1, 2] (1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {3.6976562405054594`, 
+         0.990784003531339}], 
+        Offset[{7.7274066103125465`, 2.070552360820166}, {3.6976562405054594`,
+          0.990784003531339}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["60", NCache[
+       Offset[{4 3^Rational[1, 2], 4}, {3.315227889746332, 1.91404771457}], 
+        Offset[{6.928203230275509, 4}, {3.315227889746332, 1.91404771457}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2]), Rational[
+         1, 4]}],
+       Background->Automatic], 
+      InsetBox["45", NCache[
+       Offset[{4 2^Rational[1, 2], 4 2^Rational[1, 2]}, {2.7068722369741205`, 
+         2.7068722369741205`}], 
+        Offset[{5.656854249492381, 5.656854249492381}, {2.7068722369741205`, 
+         2.7068722369741205`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 - 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 - 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["30", NCache[
+       Offset[{4, 4 3^Rational[1, 2]}, {1.91404771457, 3.315227889746332}], 
+        Offset[{4, 6.928203230275509}, {1.91404771457, 3.315227889746332}]], 
+       ImageScaled[{
+        Rational[1, 4], 
+         Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["15", NCache[
+       Offset[{2 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {0.990784003531339, 
+         3.6976562405054594`}], 
+        Offset[{2.070552360820166, 7.7274066103125465`}, {0.990784003531339, 
+         3.6976562405054594`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["0", Offset[{0, 8}, {0., 3.82809542914}], 
+       ImageScaled[{Rational[1, 2], 0}],
+       Background->Automatic], 
+      InsetBox["345", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {-0.990784003531339, 
+         3.6976562405054594`}], 
+        Offset[{-2.070552360820166, 7.7274066103125465`}, {-0.990784003531339,
+          3.6976562405054594`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["330", NCache[
+       Offset[{-4, 4 3^Rational[1, 2]}, {-1.91404771457, 3.315227889746332}], 
+        Offset[{-4, 6.928203230275509}, {-1.91404771457, 3.315227889746332}]],
+        ImageScaled[{
+        Rational[3, 4], 
+         Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["315", NCache[
+       Offset[{(-4) 2^Rational[1, 2], 4 
+          2^Rational[1, 2]}, {-2.7068722369741205`, 2.7068722369741205`}], 
+        Offset[{-5.656854249492381, 5.656854249492381}, {-2.7068722369741205`,
+          2.7068722369741205`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 - 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["300", NCache[
+       Offset[{(-4) 3^Rational[1, 2], 4}, {-3.315227889746332, 
+         1.91404771457}], 
+        Offset[{-6.928203230275509, 4}, {-3.315227889746332, 1.91404771457}]],
+        ImageScaled[{
+        Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2]), Rational[1, 4]}],
+       Background->Automatic], 
+      InsetBox["285", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {-3.6976562405054594`, 
+         0.990784003531339}], 
+        Offset[{-7.7274066103125465`, 
+         2.070552360820166}, {-3.6976562405054594`, 0.990784003531339}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["270", Offset[{-8, 0}, {-3.82809542914, 0.}], 
+       ImageScaled[{1, Rational[1, 2]}],
+       Background->Automatic], 
+      InsetBox["255", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (-1 + 
+           3^Rational[1, 2])}, {-3.6976562405054594`, -0.990784003531339}], 
+        Offset[{-7.7274066103125465`, -2.070552360820166}, \
+{-3.6976562405054594`, -0.990784003531339}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["240", NCache[
+       Offset[{(-4) 
+          3^Rational[1, 2], -4}, {-3.315227889746332, -1.91404771457}], 
+        Offset[{-6.928203230275509, -4}, {-3.315227889746332, \
+-1.91404771457}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2]), Rational[3, 4]}],
+       Background->Automatic], 
+      InsetBox["225", NCache[
+       Offset[{(-4) 2^Rational[1, 2], (-4) 
+          2^Rational[1, 2]}, {-2.7068722369741205`, -2.7068722369741205`}], 
+        Offset[{-5.656854249492381, -5.656854249492381}, \
+{-2.7068722369741205`, -2.7068722369741205`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 + 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["210", NCache[
+       Offset[{-4, (-4) 
+          3^Rational[1, 2]}, {-1.91404771457, -3.315227889746332}], 
+        Offset[{-4, -6.928203230275509}, {-1.91404771457, \
+-3.315227889746332}]], 
+       ImageScaled[{
+        Rational[3, 4], Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["195", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (1 + 
+           3^Rational[1, 2])}, {-0.990784003531339, -3.6976562405054594`}], 
+        Offset[{-2.070552360820166, -7.7274066103125465`}, \
+{-0.990784003531339, -3.6976562405054594`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["180", Offset[{0, -8}, {0., -3.82809542914}], 
+       ImageScaled[{Rational[1, 2], 1}],
+       Background->Automatic], 
+      InsetBox["165", NCache[
+       Offset[{2 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {
+         0.990784003531339, -3.6976562405054594`}], 
+        Offset[{2.070552360820166, -7.7274066103125465`}, {
+         0.990784003531339, -3.6976562405054594`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["150", NCache[
+       Offset[{4, (-4) 3^Rational[1, 2]}, {
+         1.91404771457, -3.315227889746332}], 
+        Offset[{4, -6.928203230275509}, {1.91404771457, -3.315227889746332}]],
+        ImageScaled[{
+        Rational[1, 4], Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["135", NCache[
+       Offset[{4 2^Rational[1, 2], (-4) 2^Rational[1, 2]}, {
+         2.7068722369741205`, -2.7068722369741205`}], 
+        Offset[{5.656854249492381, -5.656854249492381}, {
+         2.7068722369741205`, -2.7068722369741205`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 - 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 + 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["120", NCache[
+       Offset[{4 3^Rational[1, 2], -4}, {3.315227889746332, -1.91404771457}], 
+        Offset[{6.928203230275509, -4}, {3.315227889746332, -1.91404771457}]],
+        ImageScaled[{
+        Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2]), Rational[
+         3, 4]}],
+       Background->Automatic], 
+      InsetBox["105", NCache[
+       Offset[{2 2^Rational[1, 2] (1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {
+         3.6976562405054594`, -0.990784003531339}], 
+        Offset[{7.7274066103125465`, -2.070552360820166}, {
+         3.6976562405054594`, -0.990784003531339}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["90", Offset[{8, 0}, {3.82809542914, 0.}], 
+       ImageScaled[{0, Rational[1, 2]}],
+       Background->Automatic]}, 
+     CircleBox[{0, 0}, 3.82809542914, 
+      NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, {}}},
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+      Mod[
+       ArcTan[
+        Part[#, 1], 
+        Part[#, 2]], 2 Pi]}& ), "CopiedValueFunction" -> ({
+      Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+      Mod[
+       ArcTan[
+        Part[#, 1], 
+        Part[#, 2]], 2 Pi]}& )},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+    StyleBox[
+    "\"Average Pollution Concentration vs. Wind Direction\"", 14, 
+     StripOnInput -> False], TraditionalForm],
+  PlotRange->{{Automatic, Automatic}, {Automatic, Automatic}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.1], 
+     Scaled[0.1]}, {
+     Scaled[0.1], 
+     Scaled[0.1]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.6958419425434895`*^9, {3.695842060076868*^9, 3.6958420684716225`*^9}, 
+   3.695842169410078*^9, {3.6958422573601513`*^9, 3.6958422689947267`*^9}, 
+   3.69584234364021*^9, 3.695842430045879*^9, 3.6958424814784136`*^9, {
+   3.695842515777638*^9, 3.6958425208083706`*^9}, 3.695842746732009*^9, 
+   3.695842832857381*^9, 3.6958428915644608`*^9, {3.6958431269742537`*^9, 
+   3.695843130678378*^9}, {3.695843448237615*^9, 3.695843456086718*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6958406928241115`*^9, 3.695840695164111*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPolarPlot", "[", 
+  RowBox[{
+   RowBox[{"Data", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+   RowBox[{"PolarAxes", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"PolarTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"n", " ", 
+           RowBox[{"\[Pi]", "/", "180"}]}], ",", 
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{"90", "-", "n"}], ",", "360"}], "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", "0", ",", "360", ",", "15"}], "}"}]}], "]"}], ",", 
+      "Automatic"}], "}"}]}], ",", 
+   RowBox[{"PolarGridLines", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", 
+    RowBox[{"Style", "[", 
+     RowBox[{
+     "\"\<Average CO Concentration vs. Wind Direction\>\"", ",", "14"}], 
+     "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.695818104532488*^9, 3.6958181133585577`*^9}, 
+   3.6958406548953114`*^9, {3.695842910894885*^9, 3.6958429286604013`*^9}, {
+   3.695843468013031*^9, 3.6958434931135187`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {0.896233477992, 0.}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.8656950627773481, 0.23196229296280046`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.7761609596631536, 0.448116738996}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.6337327698145476, 0.6337327698145476}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.448116738996, 0.7761609596631536}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.23196229296280046`, 0.8656950627773481}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {0., 0.896233477992}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.23196229296280046`, 0.8656950627773481}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.448116738996, 0.7761609596631536}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.6337327698145476, 0.6337327698145476}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.7761609596631536, 0.448116738996}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.8656950627773481, 0.23196229296280046`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {-0.896233477992, 0.}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.8656950627773481, -0.23196229296280046`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.7761609596631536, -0.448116738996}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.6337327698145476, -0.6337327698145476}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.448116738996, -0.7761609596631536}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.23196229296280046`, -0.8656950627773481}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {0., -0.896233477992}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.23196229296280046`, -0.8656950627773481}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.448116738996, -0.7761609596631536}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.6337327698145476, -0.6337327698145476}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.7761609596631536, -0.448116738996}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.8656950627773481, -0.23196229296280046`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.896233477992, 0.}}]}}, {
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0., NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0.1792466955984, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0.3584933911968, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0.5377400867952, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0.7169867823936, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}}}, {}, {{}, 
+    GraphicsComplexBox[CompressedData["
+1:eJwBYQKe/SFib1JlAgAAACUAAAACAAAAgg/0TtxpjTxGzLKXUKrqP0vyIohr
+TcE/8Sj6UR+I6D97hEMUDmXTP7c20TCwpOo/pq4jy+MT3D9Amqsq5VDoP1Sy
+1eDN5uA/hwTWBXwk5D/jAiN/5ZTjPzukANBRbuA/1xjZVfFG5z9iH1hby+Da
+P45q3eMeweo/iZX8icB50z+ZW20mxDbqPzm1cBUofcI/jsqx1PGt7D8AAAAA
+AAAAAIRKU5vJ2Os/N8nGhf2jw78Byb2gVannP5kFvv9gOdG/QmBEn6kf6D89
+xU15Ctvbv5/tpr+cnOQ/xyereppL4b/1xP/iKhThP8g2Ct6LWuS/It0lj8/F
+2j+ebNEBky/nv6B0Xrf8SdE/8sVjYCbA57/NhtVKUNjBP0sNMWwMTem/Byaw
+6zYnjDwalBue0IXpv4ugGya4bMG/MNLJxX+06L9jh59vwePQv9EpMeC1M+e/
+XZLi6Z9Y2b+dh8NUUPPlvzt3laZxPeG/rYGn2LyL5L+2TGMuXBXjv0fMsshN
+A+C/kr/N4ery478/D4Lc9QjXv74tc3VVTOa/jIU+w1M70L9ahNFxVA7pv4ak
+QeITrMG/1qbZuHYq6b+salbJcsKbvHCANNJtgOa/JAHmncC9vz+U+TDDQJnl
+v5SCHBvvcc8/43GOUNoO47827oMrnQHWP0eGg4ve/+O/2cmymBTI4D9Yum8E
+o2LbvyU8Q815UeA/Tc6rycz+1b8stgRyagzjPx5LScjTW82/RtnbNGQq5D/q
+eS8v0KjAv4Q6m0q9nuc/oQs3O2UPprxGzLKXUKrqP/5kQYI=
+     "], {{}, {}, 
+      {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       0.012833333333333334`], AbsoluteThickness[1.6], 
+       LineBox[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+         19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 
+        36, 37}]}}], {}, {}, {{}, {}}}, {}, {}, {{}, {}}, {}, {{{
+      LineBox[{Scaled[{0, 0}, {0.896233477992, 0.}], 
+        Scaled[{0.006, 0.}, {0.896233477992, 0.}]}], 
+      LineBox[{Scaled[{0, 0}, {0.8656950627773481, 0.23196229296280046`}], 
+        Scaled[{0.005795554957734409, 0.0015529142706151244`}, {
+         0.8656950627773481, 0.23196229296280046`}]}], 
+      LineBox[{Scaled[{0, 0}, {0.7761609596631536, 0.448116738996}], 
+        Scaled[{0.005196152422706632, 0.003}, {0.7761609596631536, 
+         0.448116738996}]}], 
+      LineBox[{Scaled[{0, 0}, {0.6337327698145476, 0.6337327698145476}], 
+        Scaled[{0.004242640687119285, 0.004242640687119285}, {
+         0.6337327698145476, 0.6337327698145476}]}], 
+      LineBox[{Scaled[{0, 0}, {0.448116738996, 0.7761609596631536}], 
+        Scaled[{0.003, 0.005196152422706632}, {0.448116738996, 
+         0.7761609596631536}]}], 
+      LineBox[{Scaled[{0, 0}, {0.23196229296280046`, 0.8656950627773481}], 
+        Scaled[{0.0015529142706151244`, 0.005795554957734409}, {
+         0.23196229296280046`, 0.8656950627773481}]}], 
+      LineBox[{Scaled[{0, 0}, {0., 0.896233477992}], 
+        Scaled[{0., 0.006}, {0., 0.896233477992}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.23196229296280046`, 0.8656950627773481}], 
+        Scaled[{-0.0015529142706151244`, 
+         0.005795554957734409}, {-0.23196229296280046`, 
+         0.8656950627773481}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.448116738996, 0.7761609596631536}], 
+        Scaled[{-0.003, 0.005196152422706632}, {-0.448116738996, 
+         0.7761609596631536}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.6337327698145476, 0.6337327698145476}], 
+        Scaled[{-0.004242640687119285, 
+         0.004242640687119285}, {-0.6337327698145476, 0.6337327698145476}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.7761609596631536, 0.448116738996}], 
+        Scaled[{-0.005196152422706632, 0.003}, {-0.7761609596631536, 
+         0.448116738996}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.8656950627773481, 0.23196229296280046`}], 
+        Scaled[{-0.005795554957734409, 
+         0.0015529142706151244`}, {-0.8656950627773481, 
+         0.23196229296280046`}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.896233477992, 0.}], 
+        Scaled[{-0.006, 0.}, {-0.896233477992, 0.}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.8656950627773481, -0.23196229296280046`}], 
+        Scaled[{-0.005795554957734409, -0.0015529142706151244`}, \
+{-0.8656950627773481, -0.23196229296280046`}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.7761609596631536, -0.448116738996}], 
+        Scaled[{-0.005196152422706632, -0.003}, {-0.7761609596631536, \
+-0.448116738996}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.6337327698145476, -0.6337327698145476}], 
+        Scaled[{-0.004242640687119285, -0.004242640687119285}, \
+{-0.6337327698145476, -0.6337327698145476}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.448116738996, -0.7761609596631536}], 
+        Scaled[{-0.003, -0.005196152422706632}, {-0.448116738996, \
+-0.7761609596631536}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.23196229296280046`, -0.8656950627773481}], 
+        Scaled[{-0.0015529142706151244`, -0.005795554957734409}, \
+{-0.23196229296280046`, -0.8656950627773481}]}], 
+      LineBox[{Scaled[{0, 0}, {0., -0.896233477992}], 
+        Scaled[{0., -0.006}, {0., -0.896233477992}]}], 
+      LineBox[{Scaled[{0, 0}, {0.23196229296280046`, -0.8656950627773481}], 
+        Scaled[{0.0015529142706151244`, -0.005795554957734409}, {
+         0.23196229296280046`, -0.8656950627773481}]}], 
+      LineBox[{Scaled[{0, 0}, {0.448116738996, -0.7761609596631536}], 
+        Scaled[{0.003, -0.005196152422706632}, {
+         0.448116738996, -0.7761609596631536}]}], 
+      LineBox[{Scaled[{0, 0}, {0.6337327698145476, -0.6337327698145476}], 
+        Scaled[{0.004242640687119285, -0.004242640687119285}, {
+         0.6337327698145476, -0.6337327698145476}]}], 
+      LineBox[{Scaled[{0, 0}, {0.7761609596631536, -0.448116738996}], 
+        Scaled[{0.005196152422706632, -0.003}, {
+         0.7761609596631536, -0.448116738996}]}], 
+      LineBox[{Scaled[{0, 0}, {0.8656950627773481, -0.23196229296280046`}], 
+        Scaled[{0.005795554957734409, -0.0015529142706151244`}, {
+         0.8656950627773481, -0.23196229296280046`}]}], 
+      LineBox[{Scaled[{0, 0}, {0.896233477992, 0.}], 
+        Scaled[{0.006, 0.}, {0.896233477992, 0.}]}]}, 
+     LineBox[{}], {
+      InsetBox["90", Offset[{8, 0}, {0.896233477992, 0.}], 
+       ImageScaled[{0, Rational[1, 2]}],
+       Background->Automatic], 
+      InsetBox["75", NCache[
+       Offset[{2 2^Rational[1, 2] (1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {0.8656950627773481, 
+         0.23196229296280046`}], 
+        Offset[{7.7274066103125465`, 2.070552360820166}, {0.8656950627773481, 
+         0.23196229296280046`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["60", NCache[
+       Offset[{4 3^Rational[1, 2], 4}, {0.7761609596631536, 0.448116738996}], 
+        Offset[{6.928203230275509, 4}, {0.7761609596631536, 0.448116738996}]],
+        ImageScaled[{
+        Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2]), Rational[
+         1, 4]}],
+       Background->Automatic], 
+      InsetBox["45", NCache[
+       Offset[{4 2^Rational[1, 2], 4 2^Rational[1, 2]}, {0.6337327698145476, 
+         0.6337327698145476}], 
+        Offset[{5.656854249492381, 5.656854249492381}, {0.6337327698145476, 
+         0.6337327698145476}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 - 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 - 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["30", NCache[
+       Offset[{4, 4 3^Rational[1, 2]}, {0.448116738996, 0.7761609596631536}], 
+        Offset[{4, 6.928203230275509}, {0.448116738996, 0.7761609596631536}]],
+        ImageScaled[{
+        Rational[1, 4], 
+         Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["15", NCache[
+       Offset[{2 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {0.23196229296280046`, 
+         0.8656950627773481}], 
+        Offset[{2.070552360820166, 7.7274066103125465`}, {
+         0.23196229296280046`, 0.8656950627773481}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["0", Offset[{0, 8}, {0., 0.896233477992}], 
+       ImageScaled[{Rational[1, 2], 0}],
+       Background->Automatic], 
+      InsetBox["345", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {-0.23196229296280046`, 
+         0.8656950627773481}], 
+        Offset[{-2.070552360820166, 
+         7.7274066103125465`}, {-0.23196229296280046`, 0.8656950627773481}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["330", NCache[
+       Offset[{-4, 4 3^Rational[1, 2]}, {-0.448116738996, 
+         0.7761609596631536}], 
+        Offset[{-4, 6.928203230275509}, {-0.448116738996, 
+         0.7761609596631536}]], 
+       ImageScaled[{
+        Rational[3, 4], 
+         Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["315", NCache[
+       Offset[{(-4) 2^Rational[1, 2], 4 
+          2^Rational[1, 2]}, {-0.6337327698145476, 0.6337327698145476}], 
+        Offset[{-5.656854249492381, 5.656854249492381}, {-0.6337327698145476, 
+         0.6337327698145476}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 - 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["300", NCache[
+       Offset[{(-4) 3^Rational[1, 2], 4}, {-0.7761609596631536, 
+         0.448116738996}], 
+        Offset[{-6.928203230275509, 4}, {-0.7761609596631536, 
+         0.448116738996}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2]), Rational[1, 4]}],
+       Background->Automatic], 
+      InsetBox["285", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {-0.8656950627773481, 
+         0.23196229296280046`}], 
+        Offset[{-7.7274066103125465`, 
+         2.070552360820166}, {-0.8656950627773481, 0.23196229296280046`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["270", Offset[{-8, 0}, {-0.896233477992, 0.}], 
+       ImageScaled[{1, Rational[1, 2]}],
+       Background->Automatic], 
+      InsetBox["255", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (-1 + 
+           3^Rational[1, 2])}, {-0.8656950627773481, -0.23196229296280046`}], 
+        Offset[{-7.7274066103125465`, -2.070552360820166}, \
+{-0.8656950627773481, -0.23196229296280046`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["240", NCache[
+       Offset[{(-4) 
+          3^Rational[1, 2], -4}, {-0.7761609596631536, -0.448116738996}], 
+        Offset[{-6.928203230275509, -4}, {-0.7761609596631536, \
+-0.448116738996}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2]), Rational[3, 4]}],
+       Background->Automatic], 
+      InsetBox["225", NCache[
+       Offset[{(-4) 2^Rational[1, 2], (-4) 
+          2^Rational[1, 2]}, {-0.6337327698145476, -0.6337327698145476}], 
+        Offset[{-5.656854249492381, -5.656854249492381}, \
+{-0.6337327698145476, -0.6337327698145476}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 + 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["210", NCache[
+       Offset[{-4, (-4) 
+          3^Rational[1, 2]}, {-0.448116738996, -0.7761609596631536}], 
+        Offset[{-4, -6.928203230275509}, {-0.448116738996, \
+-0.7761609596631536}]], 
+       ImageScaled[{
+        Rational[3, 4], Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["195", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (1 + 
+           3^Rational[1, 2])}, {-0.23196229296280046`, -0.8656950627773481}], 
+        Offset[{-2.070552360820166, -7.7274066103125465`}, \
+{-0.23196229296280046`, -0.8656950627773481}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["180", Offset[{0, -8}, {0., -0.896233477992}], 
+       ImageScaled[{Rational[1, 2], 1}],
+       Background->Automatic], 
+      InsetBox["165", NCache[
+       Offset[{2 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {
+         0.23196229296280046`, -0.8656950627773481}], 
+        Offset[{2.070552360820166, -7.7274066103125465`}, {
+         0.23196229296280046`, -0.8656950627773481}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["150", NCache[
+       Offset[{4, (-4) 3^Rational[1, 2]}, {
+         0.448116738996, -0.7761609596631536}], 
+        Offset[{4, -6.928203230275509}, {
+         0.448116738996, -0.7761609596631536}]], 
+       ImageScaled[{
+        Rational[1, 4], Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["135", NCache[
+       Offset[{4 2^Rational[1, 2], (-4) 2^Rational[1, 2]}, {
+         0.6337327698145476, -0.6337327698145476}], 
+        Offset[{5.656854249492381, -5.656854249492381}, {
+         0.6337327698145476, -0.6337327698145476}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 - 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 + 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["120", NCache[
+       Offset[{4 3^Rational[1, 2], -4}, {
+         0.7761609596631536, -0.448116738996}], 
+        Offset[{6.928203230275509, -4}, {
+         0.7761609596631536, -0.448116738996}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2]), Rational[
+         3, 4]}],
+       Background->Automatic], 
+      InsetBox["105", NCache[
+       Offset[{2 2^Rational[1, 2] (1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {
+         0.8656950627773481, -0.23196229296280046`}], 
+        Offset[{7.7274066103125465`, -2.070552360820166}, {
+         0.8656950627773481, -0.23196229296280046`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["90", Offset[{8, 0}, {0.896233477992, 0.}], 
+       ImageScaled[{0, Rational[1, 2]}],
+       Background->Automatic]}, 
+     CircleBox[{0, 0}, 0.896233477992, 
+      NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, {}}},
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+      Mod[
+       ArcTan[
+        Part[#, 1], 
+        Part[#, 2]], 2 Pi]}& ), "CopiedValueFunction" -> ({
+      Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+      Mod[
+       ArcTan[
+        Part[#, 1], 
+        Part[#, 2]], 2 Pi]}& )},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+    StyleBox[
+    "\"Average CO Concentration vs. Wind Direction\"", 14, StripOnInput -> 
+     False], TraditionalForm],
+  PlotRange->{{Automatic, Automatic}, {Automatic, Automatic}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.1], 
+     Scaled[0.1]}, {
+     Scaled[0.1], 
+     Scaled[0.1]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.695843487741843*^9, 3.695843493768752*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPolarPlot", "[", 
+  RowBox[{
+   RowBox[{"Data", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "3"}], "}"}]}], "]"}], "]"}], ",", 
+   RowBox[{"PolarAxes", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"PolarTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"n", " ", 
+           RowBox[{"\[Pi]", "/", "180"}]}], ",", 
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{"90", "-", "n"}], ",", "360"}], "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", "0", ",", "360", ",", "15"}], "}"}]}], "]"}], ",", 
+      "Automatic"}], "}"}]}], ",", 
+   RowBox[{"PolarGridLines", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", 
+    RowBox[{"Style", "[", 
+     RowBox[{
+     "\"\<Average NO2 Concentration vs. Wind Direction\>\"", ",", "14"}], 
+     "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.695818104532488*^9, 3.695818136703025*^9}, {
+  3.695842938680066*^9, 3.695842940926481*^9}, {3.6958435025046005`*^9, 
+  3.6958435203504505`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {3.01534001464, 0.}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {2.9125947951836326`, 0.7804274232485455}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {2.611361053725981, 1.50767000732}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {2.132167371935087, 2.132167371935087}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {1.50767000732, 2.611361053725981}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.7804274232485455, 2.9125947951836326`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {0., 3.01534001464}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.7804274232485455, 2.9125947951836326`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-1.50767000732, 2.611361053725981}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-2.132167371935087, 2.132167371935087}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-2.611361053725981, 1.50767000732}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-2.9125947951836326`, 0.7804274232485455}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {-3.01534001464, 0.}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-2.9125947951836326`, -0.7804274232485455}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-2.611361053725981, -1.50767000732}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-2.132167371935087, -2.132167371935087}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-1.50767000732, -2.611361053725981}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.7804274232485455, -2.9125947951836326`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {0., -3.01534001464}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.7804274232485455, -2.9125947951836326`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {1.50767000732, -2.611361053725981}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {2.132167371935087, -2.132167371935087}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {2.611361053725981, -1.50767000732}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {2.9125947951836326`, -0.7804274232485455}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {3.01534001464, 0.}}]}}, {
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0., NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0.603068002928, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 1.206136005856, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 1.809204008784, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 2.412272011712, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}}}, {}, {{}, 
+    GraphicsComplexBox[CompressedData["
+1:eJwBYQKe/SFib1JlAgAAACUAAAACAAAAsV7ImgC3pDycd4dmhccCQBB+BV3j
+etY/t9AO62Xf/z+NkREv4vnlP1wCpHV+MP4/8kMaAqXd8T+93v7lyPH+PxiZ
+Kg1KkvQ/+o+RgB6E+D/868tr51H0PyzfgmzqDPE/91rUEMEk9D+qVzG+gULn
+P8i+YQbuQfY/6Ff+8MAz4D+61O3yV/v0P59VxP7mmM0/FlCm6Av38j8AAAAA
+AAAAACu+elA0OvM/a1uW5lYfy7+gWJdUktDzP3q2wm8P2dy/SwP6JFSR8z+z
+PeJHRpjmvxyiheOm1ek/GNn0S4Ot5b+PpalH8OXmP+OwSoP8Seu/+0zql2Tm
+4z9Heyqr3zvxv6GMoXeJBuA//ecdWdAD9r8z8uVtG3jOP225F2OTmfW/UX1j
+5wxPmjyXYChbxNn3v6xo8XikTNO/YlYIp/Fc+79SRj4RMUjiv46YcUdcHfm/
+9zxyiwRh7r9TBfZNGE/6v/kyZ2Qjx/C/pdPCFr/+87+JsuXYoKP0vwRNuZV9
+UfG/h70eHJfj+b/mQW/O4eTtv+FaMwFqMPe/dgrsJVvh4L/oBFNS7mz6v2kb
+HQFco9K/7c1GNjxf+r/0eL4ACxetvNm6F91e8fm/RBIiFjZM0j8AzChJjVH5
+v5q+txUvbuI/oRB5SY6m/r/WuzELNrLxP3/56y8PTAHAswX0dyoH/T9+yLBW
+cYf8v9TF5bnz/wBAxXbQkMbZ8r+VcauKPlMAQCeRoUs6EuK/Fw5iZDrT+D/n
+PsswZsHgv1LA8Q+ZwQdACo4s6IASv7ycd4dmhccCQIm3PxM=
+     "], {{}, {}, 
+      {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       0.012833333333333334`], AbsoluteThickness[1.6], 
+       LineBox[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+         19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 
+        36, 37}]}}], {}, {}, {{}, {}}}, {}, {}, {{}, {}}, {}, {{{
+      LineBox[{Scaled[{0, 0}, {3.01534001464, 0.}], 
+        Scaled[{0.006, 0.}, {3.01534001464, 0.}]}], 
+      LineBox[{Scaled[{0, 0}, {2.9125947951836326`, 0.7804274232485455}], 
+        Scaled[{0.005795554957734409, 0.0015529142706151244`}, {
+         2.9125947951836326`, 0.7804274232485455}]}], 
+      LineBox[{Scaled[{0, 0}, {2.611361053725981, 1.50767000732}], 
+        Scaled[{0.005196152422706632, 0.003}, {2.611361053725981, 
+         1.50767000732}]}], 
+      LineBox[{Scaled[{0, 0}, {2.132167371935087, 2.132167371935087}], 
+        Scaled[{0.004242640687119285, 0.004242640687119285}, {
+         2.132167371935087, 2.132167371935087}]}], 
+      LineBox[{Scaled[{0, 0}, {1.50767000732, 2.611361053725981}], 
+        Scaled[{0.003, 0.005196152422706632}, {1.50767000732, 
+         2.611361053725981}]}], 
+      LineBox[{Scaled[{0, 0}, {0.7804274232485455, 2.9125947951836326`}], 
+        Scaled[{0.0015529142706151244`, 0.005795554957734409}, {
+         0.7804274232485455, 2.9125947951836326`}]}], 
+      LineBox[{Scaled[{0, 0}, {0., 3.01534001464}], 
+        Scaled[{0., 0.006}, {0., 3.01534001464}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.7804274232485455, 2.9125947951836326`}], 
+        Scaled[{-0.0015529142706151244`, 
+         0.005795554957734409}, {-0.7804274232485455, 2.9125947951836326`}]}],
+       LineBox[{
+       Scaled[{0, 0}, {-1.50767000732, 2.611361053725981}], 
+        Scaled[{-0.003, 0.005196152422706632}, {-1.50767000732, 
+         2.611361053725981}]}], 
+      LineBox[{Scaled[{0, 0}, {-2.132167371935087, 2.132167371935087}], 
+        Scaled[{-0.004242640687119285, 
+         0.004242640687119285}, {-2.132167371935087, 2.132167371935087}]}], 
+      LineBox[{
+       Scaled[{0, 0}, {-2.611361053725981, 1.50767000732}], 
+        Scaled[{-0.005196152422706632, 0.003}, {-2.611361053725981, 
+         1.50767000732}]}], 
+      LineBox[{Scaled[{0, 0}, {-2.9125947951836326`, 0.7804274232485455}], 
+        Scaled[{-0.005795554957734409, 
+         0.0015529142706151244`}, {-2.9125947951836326`, 
+         0.7804274232485455}]}], 
+      LineBox[{Scaled[{0, 0}, {-3.01534001464, 0.}], 
+        Scaled[{-0.006, 0.}, {-3.01534001464, 0.}]}], 
+      LineBox[{Scaled[{0, 0}, {-2.9125947951836326`, -0.7804274232485455}], 
+        Scaled[{-0.005795554957734409, -0.0015529142706151244`}, \
+{-2.9125947951836326`, -0.7804274232485455}]}], 
+      LineBox[{Scaled[{0, 0}, {-2.611361053725981, -1.50767000732}], 
+        Scaled[{-0.005196152422706632, -0.003}, {-2.611361053725981, \
+-1.50767000732}]}], 
+      LineBox[{Scaled[{0, 0}, {-2.132167371935087, -2.132167371935087}], 
+        Scaled[{-0.004242640687119285, -0.004242640687119285}, \
+{-2.132167371935087, -2.132167371935087}]}], 
+      LineBox[{Scaled[{0, 0}, {-1.50767000732, -2.611361053725981}], 
+        Scaled[{-0.003, -0.005196152422706632}, {-1.50767000732, \
+-2.611361053725981}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.7804274232485455, -2.9125947951836326`}], 
+        Scaled[{-0.0015529142706151244`, -0.005795554957734409}, \
+{-0.7804274232485455, -2.9125947951836326`}]}], 
+      LineBox[{Scaled[{0, 0}, {0., -3.01534001464}], 
+        Scaled[{0., -0.006}, {0., -3.01534001464}]}], 
+      LineBox[{Scaled[{0, 0}, {0.7804274232485455, -2.9125947951836326`}], 
+        Scaled[{0.0015529142706151244`, -0.005795554957734409}, {
+         0.7804274232485455, -2.9125947951836326`}]}], 
+      LineBox[{Scaled[{0, 0}, {1.50767000732, -2.611361053725981}], 
+        Scaled[{0.003, -0.005196152422706632}, {
+         1.50767000732, -2.611361053725981}]}], 
+      LineBox[{Scaled[{0, 0}, {2.132167371935087, -2.132167371935087}], 
+        Scaled[{0.004242640687119285, -0.004242640687119285}, {
+         2.132167371935087, -2.132167371935087}]}], 
+      LineBox[{Scaled[{0, 0}, {2.611361053725981, -1.50767000732}], 
+        Scaled[{0.005196152422706632, -0.003}, {
+         2.611361053725981, -1.50767000732}]}], 
+      LineBox[{Scaled[{0, 0}, {2.9125947951836326`, -0.7804274232485455}], 
+        Scaled[{0.005795554957734409, -0.0015529142706151244`}, {
+         2.9125947951836326`, -0.7804274232485455}]}], 
+      LineBox[{Scaled[{0, 0}, {3.01534001464, 0.}], 
+        Scaled[{0.006, 0.}, {3.01534001464, 0.}]}]}, 
+     LineBox[{}], {
+      InsetBox["90", Offset[{8, 0}, {3.01534001464, 0.}], 
+       ImageScaled[{0, Rational[1, 2]}],
+       Background->Automatic], 
+      InsetBox["75", NCache[
+       Offset[{2 2^Rational[1, 2] (1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {2.9125947951836326`, 
+         0.7804274232485455}], 
+        Offset[{7.7274066103125465`, 2.070552360820166}, {2.9125947951836326`,
+          0.7804274232485455}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["60", NCache[
+       Offset[{4 3^Rational[1, 2], 4}, {2.611361053725981, 1.50767000732}], 
+        Offset[{6.928203230275509, 4}, {2.611361053725981, 1.50767000732}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2]), Rational[
+         1, 4]}],
+       Background->Automatic], 
+      InsetBox["45", NCache[
+       Offset[{4 2^Rational[1, 2], 4 2^Rational[1, 2]}, {2.132167371935087, 
+         2.132167371935087}], 
+        Offset[{5.656854249492381, 5.656854249492381}, {2.132167371935087, 
+         2.132167371935087}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 - 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 - 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["30", NCache[
+       Offset[{4, 4 3^Rational[1, 2]}, {1.50767000732, 2.611361053725981}], 
+        Offset[{4, 6.928203230275509}, {1.50767000732, 2.611361053725981}]], 
+       ImageScaled[{
+        Rational[1, 4], 
+         Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["15", NCache[
+       Offset[{2 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {0.7804274232485455, 
+         2.9125947951836326`}], 
+        Offset[{2.070552360820166, 7.7274066103125465`}, {0.7804274232485455, 
+         2.9125947951836326`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["0", Offset[{0, 8}, {0., 3.01534001464}], 
+       ImageScaled[{Rational[1, 2], 0}],
+       Background->Automatic], 
+      InsetBox["345", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {-0.7804274232485455, 
+         2.9125947951836326`}], 
+        Offset[{-2.070552360820166, 
+         7.7274066103125465`}, {-0.7804274232485455, 2.9125947951836326`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["330", NCache[
+       Offset[{-4, 4 3^Rational[1, 2]}, {-1.50767000732, 2.611361053725981}], 
+        Offset[{-4, 6.928203230275509}, {-1.50767000732, 2.611361053725981}]],
+        ImageScaled[{
+        Rational[3, 4], 
+         Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["315", NCache[
+       Offset[{(-4) 2^Rational[1, 2], 4 
+          2^Rational[1, 2]}, {-2.132167371935087, 2.132167371935087}], 
+        Offset[{-5.656854249492381, 5.656854249492381}, {-2.132167371935087, 
+         2.132167371935087}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 - 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["300", NCache[
+       Offset[{(-4) 3^Rational[1, 2], 4}, {-2.611361053725981, 
+         1.50767000732}], 
+        Offset[{-6.928203230275509, 4}, {-2.611361053725981, 1.50767000732}]],
+        ImageScaled[{
+        Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2]), Rational[1, 4]}],
+       Background->Automatic], 
+      InsetBox["285", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {-2.9125947951836326`, 
+         0.7804274232485455}], 
+        Offset[{-7.7274066103125465`, 
+         2.070552360820166}, {-2.9125947951836326`, 0.7804274232485455}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["270", Offset[{-8, 0}, {-3.01534001464, 0.}], 
+       ImageScaled[{1, Rational[1, 2]}],
+       Background->Automatic], 
+      InsetBox["255", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (-1 + 
+           3^Rational[1, 2])}, {-2.9125947951836326`, -0.7804274232485455}], 
+        Offset[{-7.7274066103125465`, -2.070552360820166}, \
+{-2.9125947951836326`, -0.7804274232485455}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["240", NCache[
+       Offset[{(-4) 
+          3^Rational[1, 2], -4}, {-2.611361053725981, -1.50767000732}], 
+        Offset[{-6.928203230275509, -4}, {-2.611361053725981, \
+-1.50767000732}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2]), Rational[3, 4]}],
+       Background->Automatic], 
+      InsetBox["225", NCache[
+       Offset[{(-4) 2^Rational[1, 2], (-4) 
+          2^Rational[1, 2]}, {-2.132167371935087, -2.132167371935087}], 
+        Offset[{-5.656854249492381, -5.656854249492381}, {-2.132167371935087, \
+-2.132167371935087}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 + 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["210", NCache[
+       Offset[{-4, (-4) 
+          3^Rational[1, 2]}, {-1.50767000732, -2.611361053725981}], 
+        Offset[{-4, -6.928203230275509}, {-1.50767000732, \
+-2.611361053725981}]], 
+       ImageScaled[{
+        Rational[3, 4], Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["195", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (1 + 
+           3^Rational[1, 2])}, {-0.7804274232485455, -2.9125947951836326`}], 
+        Offset[{-2.070552360820166, -7.7274066103125465`}, \
+{-0.7804274232485455, -2.9125947951836326`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["180", Offset[{0, -8}, {0., -3.01534001464}], 
+       ImageScaled[{Rational[1, 2], 1}],
+       Background->Automatic], 
+      InsetBox["165", NCache[
+       Offset[{2 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {
+         0.7804274232485455, -2.9125947951836326`}], 
+        Offset[{2.070552360820166, -7.7274066103125465`}, {
+         0.7804274232485455, -2.9125947951836326`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["150", NCache[
+       Offset[{4, (-4) 3^Rational[1, 2]}, {
+         1.50767000732, -2.611361053725981}], 
+        Offset[{4, -6.928203230275509}, {1.50767000732, -2.611361053725981}]],
+        ImageScaled[{
+        Rational[1, 4], Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["135", NCache[
+       Offset[{4 2^Rational[1, 2], (-4) 2^Rational[1, 2]}, {
+         2.132167371935087, -2.132167371935087}], 
+        Offset[{5.656854249492381, -5.656854249492381}, {
+         2.132167371935087, -2.132167371935087}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 - 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 + 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["120", NCache[
+       Offset[{4 3^Rational[1, 2], -4}, {2.611361053725981, -1.50767000732}], 
+        Offset[{6.928203230275509, -4}, {2.611361053725981, -1.50767000732}]],
+        ImageScaled[{
+        Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2]), Rational[
+         3, 4]}],
+       Background->Automatic], 
+      InsetBox["105", NCache[
+       Offset[{2 2^Rational[1, 2] (1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {
+         2.9125947951836326`, -0.7804274232485455}], 
+        Offset[{7.7274066103125465`, -2.070552360820166}, {
+         2.9125947951836326`, -0.7804274232485455}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["90", Offset[{8, 0}, {3.01534001464, 0.}], 
+       ImageScaled[{0, Rational[1, 2]}],
+       Background->Automatic]}, 
+     CircleBox[{0, 0}, 3.01534001464, 
+      NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, {}}},
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+      Mod[
+       ArcTan[
+        Part[#, 1], 
+        Part[#, 2]], 2 Pi]}& ), "CopiedValueFunction" -> ({
+      Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+      Mod[
+       ArcTan[
+        Part[#, 1], 
+        Part[#, 2]], 2 Pi]}& )},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+    StyleBox[
+    "\"Average NO2 Concentration vs. Wind Direction\"", 14, StripOnInput -> 
+     False], TraditionalForm],
+  PlotRange->{{Automatic, Automatic}, {Automatic, Automatic}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.1], 
+     Scaled[0.1]}, {
+     Scaled[0.1], 
+     Scaled[0.1]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.6958181160984244`*^9, 3.695818163771849*^9, 
+  3.6958429416752853`*^9, 3.6958435225501633`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPolarPlot", "[", 
+  RowBox[{
+   RowBox[{"Data", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "4"}], "}"}]}], "]"}], "]"}], ",", 
+   RowBox[{"PolarAxes", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"PolarTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"n", " ", 
+           RowBox[{"\[Pi]", "/", "180"}]}], ",", 
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{"90", "-", "n"}], ",", "360"}], "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", "0", ",", "360", ",", "15"}], "}"}]}], "]"}], ",", 
+      "Automatic"}], "}"}]}], ",", 
+   RowBox[{"PolarGridLines", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", 
+    RowBox[{"Style", "[", 
+     RowBox[{
+     "\"\<Average O3 Concentration vs. Wind Direction\>\"", ",", "14"}], 
+     "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.695818104532488*^9, 3.695818140285494*^9}, {
+  3.695842947301322*^9, 3.695842949661937*^9}, {3.6958435261851497`*^9, 
+  3.695843533080104*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {0.270736035493, 0.}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.26151092878980253`, 0.07007164218114041}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.23446428445682344`, 0.1353680177465}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.1914392866086621, 0.1914392866086621}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.1353680177465, 0.23446428445682344`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.07007164218114041, 0.26151092878980253`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {0., 0.270736035493}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.07007164218114041, 0.26151092878980253`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.1353680177465, 0.23446428445682344`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.1914392866086621, 0.1914392866086621}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.23446428445682344`, 0.1353680177465}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.26151092878980253`, 0.07007164218114041}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {-0.270736035493, 0.}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.26151092878980253`, -0.07007164218114041}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.23446428445682344`, -0.1353680177465}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.1914392866086621, -0.1914392866086621}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.1353680177465, -0.23446428445682344`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.07007164218114041, -0.26151092878980253`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {0., -0.270736035493}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.07007164218114041, -0.26151092878980253`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.1353680177465, -0.23446428445682344`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.1914392866086621, -0.1914392866086621}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.23446428445682344`, -0.1353680177465}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.26151092878980253`, -0.07007164218114041}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.270736035493, 0.}}]}}, {
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0., NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0.054147207098600006, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0.10829441419720001, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0.16244162129580003, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0.21658882839440002, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}}}, {}, {{}, 
+    GraphicsComplexBox[CompressedData["
+1:eJwBYQKe/SFib1JlAgAAACUAAAACAAAAPxBDgBBQbjyLkTeCAnvLP7+r2t1l
+Sqc/95OCC86C0D91Th1yAIK3P3Q9r7qUJdA/sWA1Ieyuvz+rxPHLQ3DLP16i
+buIAacA//aUUm4+Owz/Z9kOOIajDP6rWs5Z1fsA/rSgZC4Yrxz+n0zMtIsG6
+P6DopetsJMs/fAGEQwrCsz+FiIiCmajNP3IwUuUe66Q/Dbgw5hcdzz8AAAAA
+AAAAAA3uKzsZgso/wP0SAUqyor9SF5sQ/w3NP5iP0iVrJrW/WzH/Jw2Qxz9X
+d3iGNjW7vww9gGmQwsM/ahPHp6OUwL8KLI34JKvBPwe4eD55DsW/IhpkVPD3
+uz9cbGtasDjIv8GLLK79WbM/qXv/Nn2Vyr8bpZHo+kmkP9naNZkhxMy/Ma5/
+uUJhcDxM6IQn77LNv9B8rkguBKW/zWLfYCHMzb8JjGuDp+22v5E6jBNff8+/
+s9gtTvSTwL/lTsqXvrbMv01GHnvuPMW/tvT4k3tPyb+wUxPKAHzKvxF/NRwZ
+Oca/lDZ1507+zb9HbOzEElHBv0giKu2iFsq/BrnmVKb9sr/ouynx6O7Pv7o2
+byjUhaa/Rnsp3nsN0b/A3qM3aM+CvMhTvtkIfs+/YfQDhDc2pj+enPk8O0jQ
+vwRsw9lytLc/sATDB02vyb8SkaXkgKi9P8QaKXOCRca/2gqlcyKwwj/bCqVz
+IrDCv8MaKXOCRcY/8MH97xYUwL/KC5G8RtnLP+ox651tfbC/foA5qiOnxj+K
+xxmKRl+lvzq3UFBJTc4/L0wyYAy8hryLkTeCAnvLP0LCK3I=
+     "], {{}, {}, 
+      {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       0.012833333333333334`], AbsoluteThickness[1.6], 
+       LineBox[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+         19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 
+        36, 37}]}}], {}, {}, {{}, {}}}, {}, {}, {{}, {}}, {}, {{{
+      LineBox[{Scaled[{0, 0}, {0.270736035493, 0.}], 
+        Scaled[{0.006, 0.}, {0.270736035493, 0.}]}], 
+      LineBox[{Scaled[{0, 0}, {0.26151092878980253`, 0.07007164218114041}], 
+        Scaled[{0.005795554957734409, 0.0015529142706151244`}, {
+         0.26151092878980253`, 0.07007164218114041}]}], 
+      LineBox[{Scaled[{0, 0}, {0.23446428445682344`, 0.1353680177465}], 
+        Scaled[{0.005196152422706632, 0.003}, {0.23446428445682344`, 
+         0.1353680177465}]}], 
+      LineBox[{Scaled[{0, 0}, {0.1914392866086621, 0.1914392866086621}], 
+        Scaled[{0.004242640687119285, 0.004242640687119285}, {
+         0.1914392866086621, 0.1914392866086621}]}], 
+      LineBox[{Scaled[{0, 0}, {0.1353680177465, 0.23446428445682344`}], 
+        Scaled[{0.003, 0.005196152422706632}, {0.1353680177465, 
+         0.23446428445682344`}]}], 
+      LineBox[{Scaled[{0, 0}, {0.07007164218114041, 0.26151092878980253`}], 
+        Scaled[{0.0015529142706151244`, 0.005795554957734409}, {
+         0.07007164218114041, 0.26151092878980253`}]}], 
+      LineBox[{Scaled[{0, 0}, {0., 0.270736035493}], 
+        Scaled[{0., 0.006}, {0., 0.270736035493}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.07007164218114041, 0.26151092878980253`}], 
+        Scaled[{-0.0015529142706151244`, 
+         0.005795554957734409}, {-0.07007164218114041, 
+         0.26151092878980253`}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.1353680177465, 0.23446428445682344`}], 
+        Scaled[{-0.003, 0.005196152422706632}, {-0.1353680177465, 
+         0.23446428445682344`}]}], 
+      LineBox[{
+       Scaled[{0, 0}, {-0.1914392866086621, 0.1914392866086621}], 
+        Scaled[{-0.004242640687119285, 
+         0.004242640687119285}, {-0.1914392866086621, 0.1914392866086621}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.23446428445682344`, 0.1353680177465}], 
+        Scaled[{-0.005196152422706632, 0.003}, {-0.23446428445682344`, 
+         0.1353680177465}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.26151092878980253`, 0.07007164218114041}], 
+        Scaled[{-0.005795554957734409, 
+         0.0015529142706151244`}, {-0.26151092878980253`, 
+         0.07007164218114041}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.270736035493, 0.}], 
+        Scaled[{-0.006, 0.}, {-0.270736035493, 0.}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.26151092878980253`, -0.07007164218114041}], 
+        Scaled[{-0.005795554957734409, -0.0015529142706151244`}, \
+{-0.26151092878980253`, -0.07007164218114041}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.23446428445682344`, -0.1353680177465}], 
+        Scaled[{-0.005196152422706632, -0.003}, {-0.23446428445682344`, \
+-0.1353680177465}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.1914392866086621, -0.1914392866086621}], 
+        Scaled[{-0.004242640687119285, -0.004242640687119285}, \
+{-0.1914392866086621, -0.1914392866086621}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.1353680177465, -0.23446428445682344`}], 
+        Scaled[{-0.003, -0.005196152422706632}, {-0.1353680177465, \
+-0.23446428445682344`}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.07007164218114041, -0.26151092878980253`}], 
+        Scaled[{-0.0015529142706151244`, -0.005795554957734409}, \
+{-0.07007164218114041, -0.26151092878980253`}]}], 
+      LineBox[{Scaled[{0, 0}, {0., -0.270736035493}], 
+        Scaled[{0., -0.006}, {0., -0.270736035493}]}], 
+      LineBox[{Scaled[{0, 0}, {0.07007164218114041, -0.26151092878980253`}], 
+        Scaled[{0.0015529142706151244`, -0.005795554957734409}, {
+         0.07007164218114041, -0.26151092878980253`}]}], 
+      LineBox[{Scaled[{0, 0}, {0.1353680177465, -0.23446428445682344`}], 
+        Scaled[{0.003, -0.005196152422706632}, {
+         0.1353680177465, -0.23446428445682344`}]}], 
+      LineBox[{
+       Scaled[{0, 0}, {0.1914392866086621, -0.1914392866086621}], 
+        Scaled[{0.004242640687119285, -0.004242640687119285}, {
+         0.1914392866086621, -0.1914392866086621}]}], 
+      LineBox[{Scaled[{0, 0}, {0.23446428445682344`, -0.1353680177465}], 
+        Scaled[{0.005196152422706632, -0.003}, {
+         0.23446428445682344`, -0.1353680177465}]}], 
+      LineBox[{Scaled[{0, 0}, {0.26151092878980253`, -0.07007164218114041}], 
+        Scaled[{0.005795554957734409, -0.0015529142706151244`}, {
+         0.26151092878980253`, -0.07007164218114041}]}], 
+      LineBox[{Scaled[{0, 0}, {0.270736035493, 0.}], 
+        Scaled[{0.006, 0.}, {0.270736035493, 0.}]}]}, 
+     LineBox[{}], {
+      InsetBox["90", Offset[{8, 0}, {0.270736035493, 0.}], 
+       ImageScaled[{0, Rational[1, 2]}],
+       Background->Automatic], 
+      InsetBox["75", NCache[
+       Offset[{2 2^Rational[1, 2] (1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {0.26151092878980253`, 
+         0.07007164218114041}], 
+        Offset[{7.7274066103125465`, 2.070552360820166}, {
+         0.26151092878980253`, 0.07007164218114041}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["60", NCache[
+       Offset[{4 3^Rational[1, 2], 4}, {0.23446428445682344`, 
+         0.1353680177465}], 
+        Offset[{6.928203230275509, 4}, {0.23446428445682344`, 
+         0.1353680177465}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2]), Rational[
+         1, 4]}],
+       Background->Automatic], 
+      InsetBox["45", NCache[
+       Offset[{4 2^Rational[1, 2], 4 2^Rational[1, 2]}, {0.1914392866086621, 
+         0.1914392866086621}], 
+        Offset[{5.656854249492381, 5.656854249492381}, {0.1914392866086621, 
+         0.1914392866086621}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 - 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 - 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["30", NCache[
+       Offset[{4, 4 3^Rational[1, 2]}, {0.1353680177465, 
+         0.23446428445682344`}], 
+        Offset[{4, 6.928203230275509}, {0.1353680177465, 
+         0.23446428445682344`}]], 
+       ImageScaled[{
+        Rational[1, 4], 
+         Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["15", NCache[
+       Offset[{2 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {0.07007164218114041, 
+         0.26151092878980253`}], 
+        Offset[{2.070552360820166, 7.7274066103125465`}, {0.07007164218114041,
+          0.26151092878980253`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["0", Offset[{0, 8}, {0., 0.270736035493}], 
+       ImageScaled[{Rational[1, 2], 0}],
+       Background->Automatic], 
+      InsetBox["345", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {-0.07007164218114041, 
+         0.26151092878980253`}], 
+        Offset[{-2.070552360820166, 
+         7.7274066103125465`}, {-0.07007164218114041, 0.26151092878980253`}]],
+        ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["330", NCache[
+       Offset[{-4, 4 3^Rational[1, 2]}, {-0.1353680177465, 
+         0.23446428445682344`}], 
+        Offset[{-4, 6.928203230275509}, {-0.1353680177465, 
+         0.23446428445682344`}]], 
+       ImageScaled[{
+        Rational[3, 4], 
+         Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["315", NCache[
+       Offset[{(-4) 2^Rational[1, 2], 4 
+          2^Rational[1, 2]}, {-0.1914392866086621, 0.1914392866086621}], 
+        Offset[{-5.656854249492381, 5.656854249492381}, {-0.1914392866086621, 
+         0.1914392866086621}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 - 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["300", NCache[
+       Offset[{(-4) 3^Rational[1, 2], 4}, {-0.23446428445682344`, 
+         0.1353680177465}], 
+        Offset[{-6.928203230275509, 4}, {-0.23446428445682344`, 
+         0.1353680177465}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2]), Rational[1, 4]}],
+       Background->Automatic], 
+      InsetBox["285", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {-0.26151092878980253`, 
+         0.07007164218114041}], 
+        Offset[{-7.7274066103125465`, 
+         2.070552360820166}, {-0.26151092878980253`, 0.07007164218114041}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["270", Offset[{-8, 0}, {-0.270736035493, 0.}], 
+       ImageScaled[{1, Rational[1, 2]}],
+       Background->Automatic], 
+      InsetBox["255", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (-1 + 
+           3^Rational[1, 2])}, {-0.26151092878980253`, -0.07007164218114041}],
+         Offset[{-7.7274066103125465`, -2.070552360820166}, \
+{-0.26151092878980253`, -0.07007164218114041}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["240", NCache[
+       Offset[{(-4) 
+          3^Rational[1, 2], -4}, {-0.23446428445682344`, -0.1353680177465}], 
+        Offset[{-6.928203230275509, -4}, {-0.23446428445682344`, \
+-0.1353680177465}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2]), Rational[3, 4]}],
+       Background->Automatic], 
+      InsetBox["225", NCache[
+       Offset[{(-4) 2^Rational[1, 2], (-4) 
+          2^Rational[1, 2]}, {-0.1914392866086621, -0.1914392866086621}], 
+        Offset[{-5.656854249492381, -5.656854249492381}, \
+{-0.1914392866086621, -0.1914392866086621}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 + 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["210", NCache[
+       Offset[{-4, (-4) 
+          3^Rational[1, 2]}, {-0.1353680177465, -0.23446428445682344`}], 
+        Offset[{-4, -6.928203230275509}, {-0.1353680177465, \
+-0.23446428445682344`}]], 
+       ImageScaled[{
+        Rational[3, 4], Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["195", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (1 + 
+           3^Rational[1, 2])}, {-0.07007164218114041, -0.26151092878980253`}],
+         Offset[{-2.070552360820166, -7.7274066103125465`}, \
+{-0.07007164218114041, -0.26151092878980253`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["180", Offset[{0, -8}, {0., -0.270736035493}], 
+       ImageScaled[{Rational[1, 2], 1}],
+       Background->Automatic], 
+      InsetBox["165", NCache[
+       Offset[{2 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {
+         0.07007164218114041, -0.26151092878980253`}], 
+        Offset[{2.070552360820166, -7.7274066103125465`}, {
+         0.07007164218114041, -0.26151092878980253`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["150", NCache[
+       Offset[{4, (-4) 3^Rational[1, 2]}, {
+         0.1353680177465, -0.23446428445682344`}], 
+        Offset[{4, -6.928203230275509}, {
+         0.1353680177465, -0.23446428445682344`}]], 
+       ImageScaled[{
+        Rational[1, 4], Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["135", NCache[
+       Offset[{4 2^Rational[1, 2], (-4) 2^Rational[1, 2]}, {
+         0.1914392866086621, -0.1914392866086621}], 
+        Offset[{5.656854249492381, -5.656854249492381}, {
+         0.1914392866086621, -0.1914392866086621}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 - 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 + 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["120", NCache[
+       Offset[{4 3^Rational[1, 2], -4}, {
+         0.23446428445682344`, -0.1353680177465}], 
+        Offset[{6.928203230275509, -4}, {
+         0.23446428445682344`, -0.1353680177465}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2]), Rational[
+         3, 4]}],
+       Background->Automatic], 
+      InsetBox["105", NCache[
+       Offset[{2 2^Rational[1, 2] (1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {
+         0.26151092878980253`, -0.07007164218114041}], 
+        Offset[{7.7274066103125465`, -2.070552360820166}, {
+         0.26151092878980253`, -0.07007164218114041}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["90", Offset[{8, 0}, {0.270736035493, 0.}], 
+       ImageScaled[{0, Rational[1, 2]}],
+       Background->Automatic]}, 
+     CircleBox[{0, 0}, 0.270736035493, 
+      NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, {}}},
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+      Mod[
+       ArcTan[
+        Part[#, 1], 
+        Part[#, 2]], 2 Pi]}& ), "CopiedValueFunction" -> ({
+      Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+      Mod[
+       ArcTan[
+        Part[#, 1], 
+        Part[#, 2]], 2 Pi]}& )},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+    StyleBox[
+    "\"Average O3 Concentration vs. Wind Direction\"", 14, StripOnInput -> 
+     False], TraditionalForm],
+  PlotRange->{{Automatic, Automatic}, {Automatic, Automatic}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.1], 
+     Scaled[0.1]}, {
+     Scaled[0.1], 
+     Scaled[0.1]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.6958181160984244`*^9, 3.69581816590349*^9, 
+  3.6958429503327417`*^9, 3.69584353437497*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPolarPlot", "[", 
+  RowBox[{
+   RowBox[{"Data", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "5"}], "}"}]}], "]"}], "]"}], ",", 
+   RowBox[{"PolarAxes", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"PolarTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"n", " ", 
+           RowBox[{"\[Pi]", "/", "180"}]}], ",", 
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{"90", "-", "n"}], ",", "360"}], "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", "0", ",", "360", ",", "15"}], "}"}]}], "]"}], ",", 
+      "Automatic"}], "}"}]}], ",", 
+   RowBox[{"PolarGridLines", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", 
+    RowBox[{"Style", "[", 
+     RowBox[{
+     "\"\<Average SO2 Concentration vs. Wind Direction\>\"", ",", "14"}], 
+     "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.695818104532488*^9, 3.6958181133585577`*^9}, 
+   3.6958181440954676`*^9, {3.695842954559769*^9, 3.695842956759383*^9}, {
+   3.6958435384935813`*^9, 3.6958435526024065`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {1.98541985264, 0.}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {1.917768311692012, 0.5138644703878722}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {1.7194240295641965`, 0.99270992632}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {1.4039038413041398`, 1.4039038413041398`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.99270992632, 1.7194240295641965`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.5138644703878722, 1.917768311692012}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {0., 1.98541985264}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.5138644703878722, 1.917768311692012}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.99270992632, 1.7194240295641965`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-1.4039038413041398`, 1.4039038413041398`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-1.7194240295641965`, 0.99270992632}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-1.917768311692012, 0.5138644703878722}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {-1.98541985264, 0.}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-1.917768311692012, -0.5138644703878722}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-1.7194240295641965`, -0.99270992632}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-1.4039038413041398`, -1.4039038413041398`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.99270992632, -1.7194240295641965`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.5138644703878722, -1.917768311692012}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {0., -1.98541985264}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.5138644703878722, -1.917768311692012}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.99270992632, -1.7194240295641965`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {1.4039038413041398`, -1.4039038413041398`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {1.7194240295641965`, -0.99270992632}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {1.917768311692012, -0.5138644703878722}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {1.98541985264, 0.}}]}}, {
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0., NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0.39708397052800004, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0.7941679410560001, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 1.1912519115840001, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 1.5883358821120002, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}}}, {}, {{}, 
+    GraphicsComplexBox[CompressedData["
+1:eJwBYQKe/SFib1JlAgAAACUAAAACAAAALaBUWXfPlTyNmY+xx8XzP2+TPBPX
+g8o/8RjCI/jL8j8nOlnAPUrPP1wXSz39feU/ILg4dq+D0j9D/yoesAjgPxv9
+DnkFrdI/kVi+pcxB1j/PI6Ne8IrUPyhsDxPGPNE/6n/jRtg44D9kxDDLSrvS
+Py6IBn4z8uk/fn/OgyDj0j/yvSXTNpXoP/jv31+nVsE/ylkztsrw6j8AAAAA
+AAAAAP2NFrsdTu8/1XU/a2sUxr8UWbk2Q0PxP85WMYzrIdm/O1k44yyy6T9b
+OYKW0qvdv9Twh9ocieU/zrntAw0S4r/+DgNomRbmP1o8E5PjUuq/q6HcWlNB
+4D8oYaaboCfsv5YL/XeJRtM/VhCOtMN66r+pw+b89jnKP6Zm6CqZl/K/AaND
+iGJsmzzAWiIIcdz4vwG71H3tb9K/mVkEkgIk+r9MrTrR5Z/hv0qfliYrNvi/
+vMDlJqBr5r9p0MtcqWrzv6qxRW5oR+u/berlMEBB8L+tnINOKefyv/AaRLcT
+ue+/x/RuxcKC+7/nr36bR8Tvv1WZw+FD4u2/gHgNB/DA1b/MrsAOK/3zvw2m
+OclbMsy/KYV216RA8r8TIvZmOSKkvOOAcreOxPG/F3mFa0QQyT/c9EC9/2Xx
+vwrriAF+VNk/e/IDccg9878pFH/jzTfmPzyHQV5LmvS/GSDokqhJ8T/nDb7c
+USX0v13lWh5BAvg/GACcNZND6r+2J9Bqyb72P3puVG2u2tC/LKMdqz4n5z9U
+q4fek9q+v3spcuhh3+U/Inj/gplbsLyNmY+xx8XzP7HwPAo=
+     "], {{}, {}, 
+      {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       0.012833333333333334`], AbsoluteThickness[1.6], 
+       LineBox[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+         19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 
+        36, 37}]}}], {}, {}, {{}, {}}}, {}, {}, {{}, {}}, {}, {{{
+      LineBox[{Scaled[{0, 0}, {1.98541985264, 0.}], 
+        Scaled[{0.006, 0.}, {1.98541985264, 0.}]}], 
+      LineBox[{Scaled[{0, 0}, {1.917768311692012, 0.5138644703878722}], 
+        Scaled[{0.005795554957734409, 0.0015529142706151244`}, {
+         1.917768311692012, 0.5138644703878722}]}], 
+      LineBox[{Scaled[{0, 0}, {1.7194240295641965`, 0.99270992632}], 
+        Scaled[{0.005196152422706632, 0.003}, {1.7194240295641965`, 
+         0.99270992632}]}], 
+      LineBox[{Scaled[{0, 0}, {1.4039038413041398`, 1.4039038413041398`}], 
+        Scaled[{0.004242640687119285, 0.004242640687119285}, {
+         1.4039038413041398`, 1.4039038413041398`}]}], 
+      LineBox[{Scaled[{0, 0}, {0.99270992632, 1.7194240295641965`}], 
+        Scaled[{0.003, 0.005196152422706632}, {0.99270992632, 
+         1.7194240295641965`}]}], 
+      LineBox[{Scaled[{0, 0}, {0.5138644703878722, 1.917768311692012}], 
+        Scaled[{0.0015529142706151244`, 0.005795554957734409}, {
+         0.5138644703878722, 1.917768311692012}]}], 
+      LineBox[{Scaled[{0, 0}, {0., 1.98541985264}], 
+        Scaled[{0., 0.006}, {0., 1.98541985264}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.5138644703878722, 1.917768311692012}], 
+        Scaled[{-0.0015529142706151244`, 
+         0.005795554957734409}, {-0.5138644703878722, 1.917768311692012}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.99270992632, 1.7194240295641965`}], 
+        Scaled[{-0.003, 0.005196152422706632}, {-0.99270992632, 
+         1.7194240295641965`}]}], 
+      LineBox[{Scaled[{0, 0}, {-1.4039038413041398`, 1.4039038413041398`}], 
+        Scaled[{-0.004242640687119285, 
+         0.004242640687119285}, {-1.4039038413041398`, 
+         1.4039038413041398`}]}], 
+      LineBox[{Scaled[{0, 0}, {-1.7194240295641965`, 0.99270992632}], 
+        Scaled[{-0.005196152422706632, 0.003}, {-1.7194240295641965`, 
+         0.99270992632}]}], 
+      LineBox[{Scaled[{0, 0}, {-1.917768311692012, 0.5138644703878722}], 
+        Scaled[{-0.005795554957734409, 
+         0.0015529142706151244`}, {-1.917768311692012, 0.5138644703878722}]}],
+       LineBox[{
+       Scaled[{0, 0}, {-1.98541985264, 0.}], 
+        Scaled[{-0.006, 0.}, {-1.98541985264, 0.}]}], 
+      LineBox[{Scaled[{0, 0}, {-1.917768311692012, -0.5138644703878722}], 
+        Scaled[{-0.005795554957734409, -0.0015529142706151244`}, \
+{-1.917768311692012, -0.5138644703878722}]}], 
+      LineBox[{Scaled[{0, 0}, {-1.7194240295641965`, -0.99270992632}], 
+        Scaled[{-0.005196152422706632, -0.003}, {-1.7194240295641965`, \
+-0.99270992632}]}], 
+      LineBox[{Scaled[{0, 0}, {-1.4039038413041398`, -1.4039038413041398`}], 
+        Scaled[{-0.004242640687119285, -0.004242640687119285}, \
+{-1.4039038413041398`, -1.4039038413041398`}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.99270992632, -1.7194240295641965`}], 
+        Scaled[{-0.003, -0.005196152422706632}, {-0.99270992632, \
+-1.7194240295641965`}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.5138644703878722, -1.917768311692012}], 
+        Scaled[{-0.0015529142706151244`, -0.005795554957734409}, \
+{-0.5138644703878722, -1.917768311692012}]}], 
+      LineBox[{Scaled[{0, 0}, {0., -1.98541985264}], 
+        Scaled[{0., -0.006}, {0., -1.98541985264}]}], 
+      LineBox[{Scaled[{0, 0}, {0.5138644703878722, -1.917768311692012}], 
+        Scaled[{0.0015529142706151244`, -0.005795554957734409}, {
+         0.5138644703878722, -1.917768311692012}]}], 
+      LineBox[{Scaled[{0, 0}, {0.99270992632, -1.7194240295641965`}], 
+        Scaled[{0.003, -0.005196152422706632}, {
+         0.99270992632, -1.7194240295641965`}]}], 
+      LineBox[{Scaled[{0, 0}, {1.4039038413041398`, -1.4039038413041398`}], 
+        Scaled[{0.004242640687119285, -0.004242640687119285}, {
+         1.4039038413041398`, -1.4039038413041398`}]}], 
+      LineBox[{
+       Scaled[{0, 0}, {1.7194240295641965`, -0.99270992632}], 
+        Scaled[{0.005196152422706632, -0.003}, {
+         1.7194240295641965`, -0.99270992632}]}], 
+      LineBox[{Scaled[{0, 0}, {1.917768311692012, -0.5138644703878722}], 
+        Scaled[{0.005795554957734409, -0.0015529142706151244`}, {
+         1.917768311692012, -0.5138644703878722}]}], 
+      LineBox[{Scaled[{0, 0}, {1.98541985264, 0.}], 
+        Scaled[{0.006, 0.}, {1.98541985264, 0.}]}]}, 
+     LineBox[{}], {
+      InsetBox["90", Offset[{8, 0}, {1.98541985264, 0.}], 
+       ImageScaled[{0, Rational[1, 2]}],
+       Background->Automatic], 
+      InsetBox["75", NCache[
+       Offset[{2 2^Rational[1, 2] (1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {1.917768311692012, 
+         0.5138644703878722}], 
+        Offset[{7.7274066103125465`, 2.070552360820166}, {1.917768311692012, 
+         0.5138644703878722}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["60", NCache[
+       Offset[{4 3^Rational[1, 2], 4}, {1.7194240295641965`, 0.99270992632}], 
+        Offset[{6.928203230275509, 4}, {1.7194240295641965`, 0.99270992632}]],
+        ImageScaled[{
+        Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2]), Rational[
+         1, 4]}],
+       Background->Automatic], 
+      InsetBox["45", NCache[
+       Offset[{4 2^Rational[1, 2], 4 2^Rational[1, 2]}, {1.4039038413041398`, 
+         1.4039038413041398`}], 
+        Offset[{5.656854249492381, 5.656854249492381}, {1.4039038413041398`, 
+         1.4039038413041398`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 - 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 - 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["30", NCache[
+       Offset[{4, 4 3^Rational[1, 2]}, {0.99270992632, 1.7194240295641965`}], 
+        Offset[{4, 6.928203230275509}, {0.99270992632, 1.7194240295641965`}]],
+        ImageScaled[{
+        Rational[1, 4], 
+         Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["15", NCache[
+       Offset[{2 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {0.5138644703878722, 
+         1.917768311692012}], 
+        Offset[{2.070552360820166, 7.7274066103125465`}, {0.5138644703878722, 
+         1.917768311692012}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["0", Offset[{0, 8}, {0., 1.98541985264}], 
+       ImageScaled[{Rational[1, 2], 0}],
+       Background->Automatic], 
+      InsetBox["345", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {-0.5138644703878722, 
+         1.917768311692012}], 
+        Offset[{-2.070552360820166, 
+         7.7274066103125465`}, {-0.5138644703878722, 1.917768311692012}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["330", NCache[
+       Offset[{-4, 4 3^Rational[1, 2]}, {-0.99270992632, 
+         1.7194240295641965`}], 
+        Offset[{-4, 6.928203230275509}, {-0.99270992632, 
+         1.7194240295641965`}]], 
+       ImageScaled[{
+        Rational[3, 4], 
+         Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["315", NCache[
+       Offset[{(-4) 2^Rational[1, 2], 4 
+          2^Rational[1, 2]}, {-1.4039038413041398`, 1.4039038413041398`}], 
+        Offset[{-5.656854249492381, 5.656854249492381}, {-1.4039038413041398`,
+          1.4039038413041398`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 - 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["300", NCache[
+       Offset[{(-4) 3^Rational[1, 2], 4}, {-1.7194240295641965`, 
+         0.99270992632}], 
+        Offset[{-6.928203230275509, 4}, {-1.7194240295641965`, 
+         0.99270992632}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2]), Rational[1, 4]}],
+       Background->Automatic], 
+      InsetBox["285", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {-1.917768311692012, 
+         0.5138644703878722}], 
+        Offset[{-7.7274066103125465`, 2.070552360820166}, {-1.917768311692012,
+          0.5138644703878722}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["270", Offset[{-8, 0}, {-1.98541985264, 0.}], 
+       ImageScaled[{1, Rational[1, 2]}],
+       Background->Automatic], 
+      InsetBox["255", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (-1 + 
+           3^Rational[1, 2])}, {-1.917768311692012, -0.5138644703878722}], 
+        Offset[{-7.7274066103125465`, -2.070552360820166}, \
+{-1.917768311692012, -0.5138644703878722}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["240", NCache[
+       Offset[{(-4) 
+          3^Rational[1, 2], -4}, {-1.7194240295641965`, -0.99270992632}], 
+        Offset[{-6.928203230275509, -4}, {-1.7194240295641965`, \
+-0.99270992632}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2]), Rational[3, 4]}],
+       Background->Automatic], 
+      InsetBox["225", NCache[
+       Offset[{(-4) 2^Rational[1, 2], (-4) 
+          2^Rational[1, 2]}, {-1.4039038413041398`, -1.4039038413041398`}], 
+        Offset[{-5.656854249492381, -5.656854249492381}, \
+{-1.4039038413041398`, -1.4039038413041398`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 + 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["210", NCache[
+       Offset[{-4, (-4) 
+          3^Rational[1, 2]}, {-0.99270992632, -1.7194240295641965`}], 
+        Offset[{-4, -6.928203230275509}, {-0.99270992632, \
+-1.7194240295641965`}]], 
+       ImageScaled[{
+        Rational[3, 4], Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["195", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (1 + 
+           3^Rational[1, 2])}, {-0.5138644703878722, -1.917768311692012}], 
+        Offset[{-2.070552360820166, -7.7274066103125465`}, \
+{-0.5138644703878722, -1.917768311692012}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["180", Offset[{0, -8}, {0., -1.98541985264}], 
+       ImageScaled[{Rational[1, 2], 1}],
+       Background->Automatic], 
+      InsetBox["165", NCache[
+       Offset[{2 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {
+         0.5138644703878722, -1.917768311692012}], 
+        Offset[{2.070552360820166, -7.7274066103125465`}, {
+         0.5138644703878722, -1.917768311692012}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["150", NCache[
+       Offset[{4, (-4) 3^Rational[1, 2]}, {
+         0.99270992632, -1.7194240295641965`}], 
+        Offset[{4, -6.928203230275509}, {
+         0.99270992632, -1.7194240295641965`}]], 
+       ImageScaled[{
+        Rational[1, 4], Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["135", NCache[
+       Offset[{4 2^Rational[1, 2], (-4) 2^Rational[1, 2]}, {
+         1.4039038413041398`, -1.4039038413041398`}], 
+        Offset[{5.656854249492381, -5.656854249492381}, {
+         1.4039038413041398`, -1.4039038413041398`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 - 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 + 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["120", NCache[
+       Offset[{4 3^Rational[1, 2], -4}, {
+         1.7194240295641965`, -0.99270992632}], 
+        Offset[{6.928203230275509, -4}, {
+         1.7194240295641965`, -0.99270992632}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2]), Rational[
+         3, 4]}],
+       Background->Automatic], 
+      InsetBox["105", NCache[
+       Offset[{2 2^Rational[1, 2] (1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {
+         1.917768311692012, -0.5138644703878722}], 
+        Offset[{7.7274066103125465`, -2.070552360820166}, {
+         1.917768311692012, -0.5138644703878722}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["90", Offset[{8, 0}, {1.98541985264, 0.}], 
+       ImageScaled[{0, Rational[1, 2]}],
+       Background->Automatic]}, 
+     CircleBox[{0, 0}, 1.98541985264, 
+      NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, {}}},
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+      Mod[
+       ArcTan[
+        Part[#, 1], 
+        Part[#, 2]], 2 Pi]}& ), "CopiedValueFunction" -> ({
+      Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+      Mod[
+       ArcTan[
+        Part[#, 1], 
+        Part[#, 2]], 2 Pi]}& )},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+    StyleBox[
+    "\"Average SO2 Concentration vs. Wind Direction\"", 14, StripOnInput -> 
+     False], TraditionalForm],
+  PlotRange->{{Automatic, Automatic}, {Automatic, Automatic}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.1], 
+     Scaled[0.1]}, {
+     Scaled[0.1], 
+     Scaled[0.1]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.6958181160984244`*^9, 3.695818169024851*^9, 
+  3.6958429574457874`*^9, 3.695843553725664*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPolarPlot", "[", 
+  RowBox[{
+   RowBox[{"Data", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "6"}], "}"}]}], "]"}], "]"}], ",", 
+   RowBox[{"PolarAxes", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"PolarTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"n", " ", 
+           RowBox[{"\[Pi]", "/", "180"}]}], ",", 
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{"90", "-", "n"}], ",", "360"}], "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", "0", ",", "360", ",", "15"}], "}"}]}], "]"}], ",", 
+      "Automatic"}], "}"}]}], ",", 
+   RowBox[{"PolarGridLines", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", 
+    RowBox[{"Style", "[", 
+     RowBox[{
+     "\"\<Average PM2.5 Concentration vs. Wind Direction\>\"", ",", "14"}], 
+     "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.695818104532488*^9, 3.6958181133585577`*^9}, 
+   3.6958181513047066`*^9, {3.695842962003517*^9, 3.6958429679609566`*^9}, {
+   3.6958435582030935`*^9, 3.6958435636889753`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {2.51995556231, 0.}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {2.4340901587360197`, 0.6522124923378597}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {2.1823455333683595`, 1.259977781155}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {1.7818776663981601`, 1.7818776663981601`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {1.259977781155, 2.1823455333683595`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.6522124923378597, 2.4340901587360197`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {0., 2.51995556231}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.6522124923378597, 2.4340901587360197`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-1.259977781155, 2.1823455333683595`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-1.7818776663981601`, 1.7818776663981601`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-2.1823455333683595`, 1.259977781155}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-2.4340901587360197`, 0.6522124923378597}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {-2.51995556231, 0.}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-2.4340901587360197`, -0.6522124923378597}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-2.1823455333683595`, -1.259977781155}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-1.7818776663981601`, -1.7818776663981601`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-1.259977781155, -2.1823455333683595`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.6522124923378597, -2.4340901587360197`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {0., -2.51995556231}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.6522124923378597, -2.4340901587360197`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {1.259977781155, -2.1823455333683595`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {1.7818776663981601`, -1.7818776663981601`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {2.1823455333683595`, -1.259977781155}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {2.4340901587360197`, -0.6522124923378597}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {2.51995556231, 0.}}]}}, {
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0., NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0.503991112462, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 1.007982224924, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 1.511973337386, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 2.015964449848, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}}}, {}, {{}, 
+    GraphicsComplexBox[CompressedData["
+1:eJwBYQKe/SFib1JlAgAAACUAAAACAAAAQVZzOLK8mDyNKNGiAW32P+bNWyag
+h8g/JURm2LBj8T9DWZDZKIzpP1tDCzU8jAFANo2rDggU8j8xB6xT/E//P3ID
+6G6v6vk/PlFs9+ji/j8MyrfEw6r7PxoCEDAlN/c/y97M9NAt/T/hqFlOs9jw
+P1NoD5QBOQBAGLRuUkie5z/OXOHtPzoAQPDRtOwM5NY/muvOOCj3AkAAAAAA
+AAAAAO/IQ3JJxOg/Klr7xdp3wb90VSFY6fD4P1+pVeHVJ+K/IAGtipwV9T/5
+fRj5n1jov2ksJDbThfA/0fTPQH26678qQzP57JzrPwFG/3I1dPC/3KFHPJLy
+5D9DP3l3HyTyv3DoNLV3wOE/sVTVO+li+L/2mm6TFUTVPwtJz+q7Jv6/p4I2
+j9oenDwNLDY9PH75vx4g4a0RotW/tIfn0vyr/r+Y77l74qrlv3L4FGH4w/2/
+S0oaG2cs6L8RCxZiUO/0v+upPwTE7/K/SuznmFeR9r8fEJAM3KD1v8UH5RD6
+JfK/NukP48GQ8r/uVlbxAnDlv1798ImcUv+/L9BTYRLN5r/v7xLOAaP+v4nv
+uSm8m9W/T7qnJKr//r+yfCynxRixvL4+fvmjAvi/tQ4CNkbv0D8Ln0RryKH4
+v69aaAs87uE/7+nRdcCi97+o2oJtzkrrPxUpWa9Vnum/1tnEohh/5T8cHggB
+8Wvkv8OrLgBrVug/SMZKnHoG4b/rzxJjG33tPzTRg28HSN2/raYW6soc9D8b
+YR5zOQzTv4Pe1FecAfs/sIBWqoWNsryNKNGiAW32PyuQOro=
+     "], {{}, {}, 
+      {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       0.012833333333333334`], AbsoluteThickness[1.6], 
+       LineBox[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+         19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 
+        36, 37}]}}], {}, {}, {{}, {}}}, {}, {}, {{}, {}}, {}, {{{
+      LineBox[{Scaled[{0, 0}, {2.51995556231, 0.}], 
+        Scaled[{0.006, 0.}, {2.51995556231, 0.}]}], 
+      LineBox[{Scaled[{0, 0}, {2.4340901587360197`, 0.6522124923378597}], 
+        Scaled[{0.005795554957734409, 0.0015529142706151244`}, {
+         2.4340901587360197`, 0.6522124923378597}]}], 
+      LineBox[{Scaled[{0, 0}, {2.1823455333683595`, 1.259977781155}], 
+        Scaled[{0.005196152422706632, 0.003}, {2.1823455333683595`, 
+         1.259977781155}]}], 
+      LineBox[{Scaled[{0, 0}, {1.7818776663981601`, 1.7818776663981601`}], 
+        Scaled[{0.004242640687119285, 0.004242640687119285}, {
+         1.7818776663981601`, 1.7818776663981601`}]}], 
+      LineBox[{Scaled[{0, 0}, {1.259977781155, 2.1823455333683595`}], 
+        Scaled[{0.003, 0.005196152422706632}, {1.259977781155, 
+         2.1823455333683595`}]}], 
+      LineBox[{Scaled[{0, 0}, {0.6522124923378597, 2.4340901587360197`}], 
+        Scaled[{0.0015529142706151244`, 0.005795554957734409}, {
+         0.6522124923378597, 2.4340901587360197`}]}], 
+      LineBox[{Scaled[{0, 0}, {0., 2.51995556231}], 
+        Scaled[{0., 0.006}, {0., 2.51995556231}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.6522124923378597, 2.4340901587360197`}], 
+        Scaled[{-0.0015529142706151244`, 
+         0.005795554957734409}, {-0.6522124923378597, 2.4340901587360197`}]}],
+       LineBox[{
+       Scaled[{0, 0}, {-1.259977781155, 2.1823455333683595`}], 
+        Scaled[{-0.003, 0.005196152422706632}, {-1.259977781155, 
+         2.1823455333683595`}]}], 
+      LineBox[{Scaled[{0, 0}, {-1.7818776663981601`, 1.7818776663981601`}], 
+        Scaled[{-0.004242640687119285, 
+         0.004242640687119285}, {-1.7818776663981601`, 
+         1.7818776663981601`}]}], 
+      LineBox[{Scaled[{0, 0}, {-2.1823455333683595`, 1.259977781155}], 
+        Scaled[{-0.005196152422706632, 0.003}, {-2.1823455333683595`, 
+         1.259977781155}]}], 
+      LineBox[{Scaled[{0, 0}, {-2.4340901587360197`, 0.6522124923378597}], 
+        Scaled[{-0.005795554957734409, 
+         0.0015529142706151244`}, {-2.4340901587360197`, 
+         0.6522124923378597}]}], 
+      LineBox[{Scaled[{0, 0}, {-2.51995556231, 0.}], 
+        Scaled[{-0.006, 0.}, {-2.51995556231, 0.}]}], 
+      LineBox[{Scaled[{0, 0}, {-2.4340901587360197`, -0.6522124923378597}], 
+        Scaled[{-0.005795554957734409, -0.0015529142706151244`}, \
+{-2.4340901587360197`, -0.6522124923378597}]}], 
+      LineBox[{Scaled[{0, 0}, {-2.1823455333683595`, -1.259977781155}], 
+        Scaled[{-0.005196152422706632, -0.003}, {-2.1823455333683595`, \
+-1.259977781155}]}], 
+      LineBox[{Scaled[{0, 0}, {-1.7818776663981601`, -1.7818776663981601`}], 
+        Scaled[{-0.004242640687119285, -0.004242640687119285}, \
+{-1.7818776663981601`, -1.7818776663981601`}]}], 
+      LineBox[{Scaled[{0, 0}, {-1.259977781155, -2.1823455333683595`}], 
+        Scaled[{-0.003, -0.005196152422706632}, {-1.259977781155, \
+-2.1823455333683595`}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.6522124923378597, -2.4340901587360197`}], 
+        Scaled[{-0.0015529142706151244`, -0.005795554957734409}, \
+{-0.6522124923378597, -2.4340901587360197`}]}], 
+      LineBox[{Scaled[{0, 0}, {0., -2.51995556231}], 
+        Scaled[{0., -0.006}, {0., -2.51995556231}]}], 
+      LineBox[{Scaled[{0, 0}, {0.6522124923378597, -2.4340901587360197`}], 
+        Scaled[{0.0015529142706151244`, -0.005795554957734409}, {
+         0.6522124923378597, -2.4340901587360197`}]}], 
+      LineBox[{Scaled[{0, 0}, {1.259977781155, -2.1823455333683595`}], 
+        Scaled[{0.003, -0.005196152422706632}, {
+         1.259977781155, -2.1823455333683595`}]}], 
+      LineBox[{Scaled[{0, 0}, {1.7818776663981601`, -1.7818776663981601`}], 
+        Scaled[{0.004242640687119285, -0.004242640687119285}, {
+         1.7818776663981601`, -1.7818776663981601`}]}], 
+      LineBox[{Scaled[{0, 0}, {2.1823455333683595`, -1.259977781155}], 
+        Scaled[{0.005196152422706632, -0.003}, {
+         2.1823455333683595`, -1.259977781155}]}], 
+      LineBox[{Scaled[{0, 0}, {2.4340901587360197`, -0.6522124923378597}], 
+        Scaled[{0.005795554957734409, -0.0015529142706151244`}, {
+         2.4340901587360197`, -0.6522124923378597}]}], 
+      LineBox[{Scaled[{0, 0}, {2.51995556231, 0.}], 
+        Scaled[{0.006, 0.}, {2.51995556231, 0.}]}]}, 
+     LineBox[{}], {
+      InsetBox["90", Offset[{8, 0}, {2.51995556231, 0.}], 
+       ImageScaled[{0, Rational[1, 2]}],
+       Background->Automatic], 
+      InsetBox["75", NCache[
+       Offset[{2 2^Rational[1, 2] (1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {2.4340901587360197`, 
+         0.6522124923378597}], 
+        Offset[{7.7274066103125465`, 2.070552360820166}, {2.4340901587360197`,
+          0.6522124923378597}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["60", NCache[
+       Offset[{4 3^Rational[1, 2], 4}, {2.1823455333683595`, 1.259977781155}],
+         Offset[{6.928203230275509, 4}, {2.1823455333683595`, 
+         1.259977781155}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2]), Rational[
+         1, 4]}],
+       Background->Automatic], 
+      InsetBox["45", NCache[
+       Offset[{4 2^Rational[1, 2], 4 2^Rational[1, 2]}, {1.7818776663981601`, 
+         1.7818776663981601`}], 
+        Offset[{5.656854249492381, 5.656854249492381}, {1.7818776663981601`, 
+         1.7818776663981601`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 - 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 - 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["30", NCache[
+       Offset[{4, 4 3^Rational[1, 2]}, {1.259977781155, 2.1823455333683595`}],
+         Offset[{4, 6.928203230275509}, {1.259977781155, 
+         2.1823455333683595`}]], 
+       ImageScaled[{
+        Rational[1, 4], 
+         Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["15", NCache[
+       Offset[{2 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {0.6522124923378597, 
+         2.4340901587360197`}], 
+        Offset[{2.070552360820166, 7.7274066103125465`}, {0.6522124923378597, 
+         2.4340901587360197`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["0", Offset[{0, 8}, {0., 2.51995556231}], 
+       ImageScaled[{Rational[1, 2], 0}],
+       Background->Automatic], 
+      InsetBox["345", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {-0.6522124923378597, 
+         2.4340901587360197`}], 
+        Offset[{-2.070552360820166, 
+         7.7274066103125465`}, {-0.6522124923378597, 2.4340901587360197`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["330", NCache[
+       Offset[{-4, 4 3^Rational[1, 2]}, {-1.259977781155, 
+         2.1823455333683595`}], 
+        Offset[{-4, 6.928203230275509}, {-1.259977781155, 
+         2.1823455333683595`}]], 
+       ImageScaled[{
+        Rational[3, 4], 
+         Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["315", NCache[
+       Offset[{(-4) 2^Rational[1, 2], 4 
+          2^Rational[1, 2]}, {-1.7818776663981601`, 1.7818776663981601`}], 
+        Offset[{-5.656854249492381, 5.656854249492381}, {-1.7818776663981601`,
+          1.7818776663981601`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 - 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["300", NCache[
+       Offset[{(-4) 3^Rational[1, 2], 4}, {-2.1823455333683595`, 
+         1.259977781155}], 
+        Offset[{-6.928203230275509, 4}, {-2.1823455333683595`, 
+         1.259977781155}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2]), Rational[1, 4]}],
+       Background->Automatic], 
+      InsetBox["285", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {-2.4340901587360197`, 
+         0.6522124923378597}], 
+        Offset[{-7.7274066103125465`, 
+         2.070552360820166}, {-2.4340901587360197`, 0.6522124923378597}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["270", Offset[{-8, 0}, {-2.51995556231, 0.}], 
+       ImageScaled[{1, Rational[1, 2]}],
+       Background->Automatic], 
+      InsetBox["255", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (-1 + 
+           3^Rational[1, 2])}, {-2.4340901587360197`, -0.6522124923378597}], 
+        Offset[{-7.7274066103125465`, -2.070552360820166}, \
+{-2.4340901587360197`, -0.6522124923378597}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["240", NCache[
+       Offset[{(-4) 
+          3^Rational[1, 2], -4}, {-2.1823455333683595`, -1.259977781155}], 
+        Offset[{-6.928203230275509, -4}, {-2.1823455333683595`, \
+-1.259977781155}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2]), Rational[3, 4]}],
+       Background->Automatic], 
+      InsetBox["225", NCache[
+       Offset[{(-4) 2^Rational[1, 2], (-4) 
+          2^Rational[1, 2]}, {-1.7818776663981601`, -1.7818776663981601`}], 
+        Offset[{-5.656854249492381, -5.656854249492381}, \
+{-1.7818776663981601`, -1.7818776663981601`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 + 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["210", NCache[
+       Offset[{-4, (-4) 
+          3^Rational[1, 2]}, {-1.259977781155, -2.1823455333683595`}], 
+        Offset[{-4, -6.928203230275509}, {-1.259977781155, \
+-2.1823455333683595`}]], 
+       ImageScaled[{
+        Rational[3, 4], Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["195", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (1 + 
+           3^Rational[1, 2])}, {-0.6522124923378597, -2.4340901587360197`}], 
+        Offset[{-2.070552360820166, -7.7274066103125465`}, \
+{-0.6522124923378597, -2.4340901587360197`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["180", Offset[{0, -8}, {0., -2.51995556231}], 
+       ImageScaled[{Rational[1, 2], 1}],
+       Background->Automatic], 
+      InsetBox["165", NCache[
+       Offset[{2 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {
+         0.6522124923378597, -2.4340901587360197`}], 
+        Offset[{2.070552360820166, -7.7274066103125465`}, {
+         0.6522124923378597, -2.4340901587360197`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["150", NCache[
+       Offset[{4, (-4) 3^Rational[1, 2]}, {
+         1.259977781155, -2.1823455333683595`}], 
+        Offset[{4, -6.928203230275509}, {
+         1.259977781155, -2.1823455333683595`}]], 
+       ImageScaled[{
+        Rational[1, 4], Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["135", NCache[
+       Offset[{4 2^Rational[1, 2], (-4) 2^Rational[1, 2]}, {
+         1.7818776663981601`, -1.7818776663981601`}], 
+        Offset[{5.656854249492381, -5.656854249492381}, {
+         1.7818776663981601`, -1.7818776663981601`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 - 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 + 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["120", NCache[
+       Offset[{4 3^Rational[1, 2], -4}, {
+         2.1823455333683595`, -1.259977781155}], 
+        Offset[{6.928203230275509, -4}, {
+         2.1823455333683595`, -1.259977781155}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2]), Rational[
+         3, 4]}],
+       Background->Automatic], 
+      InsetBox["105", NCache[
+       Offset[{2 2^Rational[1, 2] (1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {
+         2.4340901587360197`, -0.6522124923378597}], 
+        Offset[{7.7274066103125465`, -2.070552360820166}, {
+         2.4340901587360197`, -0.6522124923378597}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["90", Offset[{8, 0}, {2.51995556231, 0.}], 
+       ImageScaled[{0, Rational[1, 2]}],
+       Background->Automatic]}, 
+     CircleBox[{0, 0}, 2.51995556231, 
+      NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, {}}},
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+      Mod[
+       ArcTan[
+        Part[#, 1], 
+        Part[#, 2]], 2 Pi]}& ), "CopiedValueFunction" -> ({
+      Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+      Mod[
+       ArcTan[
+        Part[#, 1], 
+        Part[#, 2]], 2 Pi]}& )},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+    StyleBox[
+    "\"Average PM2.5 Concentration vs. Wind Direction\"", 14, StripOnInput -> 
+     False], TraditionalForm],
+  PlotRange->{{Automatic, Automatic}, {Automatic, Automatic}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.1], 
+     Scaled[0.1]}, {
+     Scaled[0.1], 
+     Scaled[0.1]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.6958181160984244`*^9, 3.6958181715883007`*^9, 
+  3.695842968818962*^9, 3.695843564703027*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPolarPlot", "[", 
+  RowBox[{
+   RowBox[{"Data", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "7"}], "}"}]}], "]"}], "]"}], ",", 
+   RowBox[{"PolarAxes", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"PolarTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"n", " ", 
+           RowBox[{"\[Pi]", "/", "180"}]}], ",", 
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{"90", "-", "n"}], ",", "360"}], "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", "0", ",", "360", ",", "15"}], "}"}]}], "]"}], ",", 
+      "Automatic"}], "}"}]}], ",", 
+   RowBox[{"PolarGridLines", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", 
+    RowBox[{"Style", "[", 
+     RowBox[{
+     "\"\<Average PM10 Concentration vs. Wind Direction\>\"", ",", "14"}], 
+     "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.695818104532488*^9, 3.6958181133585577`*^9}, {
+  3.6958181538525553`*^9, 3.695818154304964*^9}, {3.6958429784829245`*^9, 
+  3.6958429819093466`*^9}, {3.6958435682026067`*^9, 3.695843574684439*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {3.82809542914, 0.}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {3.6976562405054594`, 0.990784003531339}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {3.315227889746332, 1.91404771457}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {2.7068722369741205`, 2.7068722369741205`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {1.91404771457, 3.315227889746332}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.990784003531339, 3.6976562405054594`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {0., 3.82809542914}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.990784003531339, 3.6976562405054594`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-1.91404771457, 3.315227889746332}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-2.7068722369741205`, 2.7068722369741205`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-3.315227889746332, 1.91404771457}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-3.6976562405054594`, 0.990784003531339}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {-3.82809542914, 0.}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-3.6976562405054594`, -0.990784003531339}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-3.315227889746332, -1.91404771457}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-2.7068722369741205`, -2.7068722369741205`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-1.91404771457, -3.315227889746332}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {-0.990784003531339, -3.6976562405054594`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {0., -3.82809542914}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {0.990784003531339, -3.6976562405054594`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {1.91404771457, -3.315227889746332}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {2.7068722369741205`, -2.7068722369741205`}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {3.315227889746332, -1.91404771457}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      LineBox[{{0, 0}, {3.6976562405054594`, -0.990784003531339}}]}, 
+     {GrayLevel[0.5], Opacity[0.4], LineBox[{{0, 0}, {3.82809542914, 0.}}]}}, {
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0., NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 0.765619085828, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 1.531238171656, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 2.296857257484, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, 
+     {GrayLevel[0.5], Opacity[0.4], 
+      CircleBox[{0, 0}, 3.062476343312, 
+       NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}}}, {}, {{}, 
+    GraphicsComplexBox[CompressedData["
+1:eJwBYQKe/SFib1JlAgAAACUAAAACAAAA8VbhHBTVqjzzvF+6RVMIQFxnJCuz
+aeA/xjBAi0FFB0BFwQnrzWvwP0ktDMXtjgZAv94FcryV+j+/2eK78AUHQLBJ
+uKQ3GP8/Pi6bDk+HAkD96EMNiCQCQBfIiAJzcv4/KvtkBkGHA0AP8Y8rpIz2
+P989Ts84+QVAQAT2Qaf97z8Iro14PxgHQLTDIo/0SeA/7G0f0k4yB0AAAAAA
+AAAAAERP9QrDZQhAQdGXci814b/QOQts/VsFQNMOkQe+GO+/e0/AhyU6BUCi
+wbzfz4L4v1MI5e7HrgBAzAuUtDj/+7/K8enWlGb9P0eje0vqhAHAy0mChqg2
+9z/Vx+k4fhoEwHdEr2UJ+PE/aT0nnT+vCMDV3IgXqrziPzhvLxbPkArAZGOV
+WO2gqzxjErAUEwwJwIV5ki6oV+K/oH2CNpkBCsBopieY7pTyv3zPmBnIhgnA
+iSAcd/eZ/b/3keIttqIJwMGP4bzCdQHA3bkudtrOBMBfXF2k1i0HwEL4FecU
+cwPAqb4jkQv3CMDF8NRJvtP8v94gN/kskAzAqNdlHtTK9L9+WcSMk1cLwMlx
+lk7bSOO/mB2PuoajDMDsRdUbJJe/vJacG0f5HQzA4NZXtMnU4z/Iw+QbIscM
+wG8Gn5zV8vQ/Zt6Q7KHAB8DN4o5ET237Pz/IAjI7dwPAj5vmb21VAEC5FjTG
+rjf6v0/3JwesPv8/mqvpQUiM978ei2FEpWQEQPVXaX6j1O2/VtHwgF99BEAZ
+H95wnETlvz20rSF7Jw5ANAGpFc8fxLzzvF+6RVMIQKiTIss=
+     "], {{}, {}, 
+      {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       0.012833333333333334`], AbsoluteThickness[1.6], 
+       LineBox[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+         19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 
+        36, 37}]}}], {}, {}, {{}, {}}}, {}, {}, {{}, {}}, {}, {{{
+      LineBox[{Scaled[{0, 0}, {3.82809542914, 0.}], 
+        Scaled[{0.006, 0.}, {3.82809542914, 0.}]}], 
+      LineBox[{Scaled[{0, 0}, {3.6976562405054594`, 0.990784003531339}], 
+        Scaled[{0.005795554957734409, 0.0015529142706151244`}, {
+         3.6976562405054594`, 0.990784003531339}]}], 
+      LineBox[{Scaled[{0, 0}, {3.315227889746332, 1.91404771457}], 
+        Scaled[{0.005196152422706632, 0.003}, {3.315227889746332, 
+         1.91404771457}]}], 
+      LineBox[{Scaled[{0, 0}, {2.7068722369741205`, 2.7068722369741205`}], 
+        Scaled[{0.004242640687119285, 0.004242640687119285}, {
+         2.7068722369741205`, 2.7068722369741205`}]}], 
+      LineBox[{Scaled[{0, 0}, {1.91404771457, 3.315227889746332}], 
+        Scaled[{0.003, 0.005196152422706632}, {1.91404771457, 
+         3.315227889746332}]}], 
+      LineBox[{Scaled[{0, 0}, {0.990784003531339, 3.6976562405054594`}], 
+        Scaled[{0.0015529142706151244`, 0.005795554957734409}, {
+         0.990784003531339, 3.6976562405054594`}]}], 
+      LineBox[{Scaled[{0, 0}, {0., 3.82809542914}], 
+        Scaled[{0., 0.006}, {0., 3.82809542914}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.990784003531339, 3.6976562405054594`}], 
+        Scaled[{-0.0015529142706151244`, 
+         0.005795554957734409}, {-0.990784003531339, 3.6976562405054594`}]}], 
+      LineBox[{Scaled[{0, 0}, {-1.91404771457, 3.315227889746332}], 
+        Scaled[{-0.003, 0.005196152422706632}, {-1.91404771457, 
+         3.315227889746332}]}], 
+      LineBox[{Scaled[{0, 0}, {-2.7068722369741205`, 2.7068722369741205`}], 
+        Scaled[{-0.004242640687119285, 
+         0.004242640687119285}, {-2.7068722369741205`, 
+         2.7068722369741205`}]}], 
+      LineBox[{Scaled[{0, 0}, {-3.315227889746332, 1.91404771457}], 
+        Scaled[{-0.005196152422706632, 0.003}, {-3.315227889746332, 
+         1.91404771457}]}], 
+      LineBox[{Scaled[{0, 0}, {-3.6976562405054594`, 0.990784003531339}], 
+        Scaled[{-0.005795554957734409, 
+         0.0015529142706151244`}, {-3.6976562405054594`, 
+         0.990784003531339}]}], 
+      LineBox[{Scaled[{0, 0}, {-3.82809542914, 0.}], 
+        Scaled[{-0.006, 0.}, {-3.82809542914, 0.}]}], 
+      LineBox[{Scaled[{0, 0}, {-3.6976562405054594`, -0.990784003531339}], 
+        Scaled[{-0.005795554957734409, -0.0015529142706151244`}, \
+{-3.6976562405054594`, -0.990784003531339}]}], 
+      LineBox[{Scaled[{0, 0}, {-3.315227889746332, -1.91404771457}], 
+        Scaled[{-0.005196152422706632, -0.003}, {-3.315227889746332, \
+-1.91404771457}]}], 
+      LineBox[{Scaled[{0, 0}, {-2.7068722369741205`, -2.7068722369741205`}], 
+        Scaled[{-0.004242640687119285, -0.004242640687119285}, \
+{-2.7068722369741205`, -2.7068722369741205`}]}], 
+      LineBox[{Scaled[{0, 0}, {-1.91404771457, -3.315227889746332}], 
+        Scaled[{-0.003, -0.005196152422706632}, {-1.91404771457, \
+-3.315227889746332}]}], 
+      LineBox[{Scaled[{0, 0}, {-0.990784003531339, -3.6976562405054594`}], 
+        Scaled[{-0.0015529142706151244`, -0.005795554957734409}, \
+{-0.990784003531339, -3.6976562405054594`}]}], 
+      LineBox[{Scaled[{0, 0}, {0., -3.82809542914}], 
+        Scaled[{0., -0.006}, {0., -3.82809542914}]}], 
+      LineBox[{Scaled[{0, 0}, {0.990784003531339, -3.6976562405054594`}], 
+        Scaled[{0.0015529142706151244`, -0.005795554957734409}, {
+         0.990784003531339, -3.6976562405054594`}]}], 
+      LineBox[{Scaled[{0, 0}, {1.91404771457, -3.315227889746332}], 
+        Scaled[{0.003, -0.005196152422706632}, {
+         1.91404771457, -3.315227889746332}]}], 
+      LineBox[{Scaled[{0, 0}, {2.7068722369741205`, -2.7068722369741205`}], 
+        Scaled[{0.004242640687119285, -0.004242640687119285}, {
+         2.7068722369741205`, -2.7068722369741205`}]}], 
+      LineBox[{
+       Scaled[{0, 0}, {3.315227889746332, -1.91404771457}], 
+        Scaled[{0.005196152422706632, -0.003}, {
+         3.315227889746332, -1.91404771457}]}], 
+      LineBox[{Scaled[{0, 0}, {3.6976562405054594`, -0.990784003531339}], 
+        Scaled[{0.005795554957734409, -0.0015529142706151244`}, {
+         3.6976562405054594`, -0.990784003531339}]}], 
+      LineBox[{Scaled[{0, 0}, {3.82809542914, 0.}], 
+        Scaled[{0.006, 0.}, {3.82809542914, 0.}]}]}, 
+     LineBox[{}], {
+      InsetBox["90", Offset[{8, 0}, {3.82809542914, 0.}], 
+       ImageScaled[{0, Rational[1, 2]}],
+       Background->Automatic], 
+      InsetBox["75", NCache[
+       Offset[{2 2^Rational[1, 2] (1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {3.6976562405054594`, 
+         0.990784003531339}], 
+        Offset[{7.7274066103125465`, 2.070552360820166}, {3.6976562405054594`,
+          0.990784003531339}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["60", NCache[
+       Offset[{4 3^Rational[1, 2], 4}, {3.315227889746332, 1.91404771457}], 
+        Offset[{6.928203230275509, 4}, {3.315227889746332, 1.91404771457}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2]), Rational[
+         1, 4]}],
+       Background->Automatic], 
+      InsetBox["45", NCache[
+       Offset[{4 2^Rational[1, 2], 4 2^Rational[1, 2]}, {2.7068722369741205`, 
+         2.7068722369741205`}], 
+        Offset[{5.656854249492381, 5.656854249492381}, {2.7068722369741205`, 
+         2.7068722369741205`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 - 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 - 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["30", NCache[
+       Offset[{4, 4 3^Rational[1, 2]}, {1.91404771457, 3.315227889746332}], 
+        Offset[{4, 6.928203230275509}, {1.91404771457, 3.315227889746332}]], 
+       ImageScaled[{
+        Rational[1, 4], 
+         Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["15", NCache[
+       Offset[{2 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {0.990784003531339, 
+         3.6976562405054594`}], 
+        Offset[{2.070552360820166, 7.7274066103125465`}, {0.990784003531339, 
+         3.6976562405054594`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["0", Offset[{0, 8}, {0., 3.82809542914}], 
+       ImageScaled[{Rational[1, 2], 0}],
+       Background->Automatic], 
+      InsetBox["345", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {-0.990784003531339, 
+         3.6976562405054594`}], 
+        Offset[{-2.070552360820166, 7.7274066103125465`}, {-0.990784003531339,
+          3.6976562405054594`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["330", NCache[
+       Offset[{-4, 4 3^Rational[1, 2]}, {-1.91404771457, 3.315227889746332}], 
+        Offset[{-4, 6.928203230275509}, {-1.91404771457, 3.315227889746332}]],
+        ImageScaled[{
+        Rational[3, 4], 
+         Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["315", NCache[
+       Offset[{(-4) 2^Rational[1, 2], 4 
+          2^Rational[1, 2]}, {-2.7068722369741205`, 2.7068722369741205`}], 
+        Offset[{-5.656854249492381, 5.656854249492381}, {-2.7068722369741205`,
+          2.7068722369741205`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 - 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["300", NCache[
+       Offset[{(-4) 3^Rational[1, 2], 4}, {-3.315227889746332, 
+         1.91404771457}], 
+        Offset[{-6.928203230275509, 4}, {-3.315227889746332, 1.91404771457}]],
+        ImageScaled[{
+        Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2]), Rational[1, 4]}],
+       Background->Automatic], 
+      InsetBox["285", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (1 + 3^Rational[1, 2]), 2 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {-3.6976562405054594`, 
+         0.990784003531339}], 
+        Offset[{-7.7274066103125465`, 
+         2.070552360820166}, {-3.6976562405054594`, 0.990784003531339}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["270", Offset[{-8, 0}, {-3.82809542914, 0.}], 
+       ImageScaled[{1, Rational[1, 2]}],
+       Background->Automatic], 
+      InsetBox["255", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (-1 + 
+           3^Rational[1, 2])}, {-3.6976562405054594`, -0.990784003531339}], 
+        Offset[{-7.7274066103125465`, -2.070552360820166}, \
+{-3.6976562405054594`, -0.990784003531339}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["240", NCache[
+       Offset[{(-4) 
+          3^Rational[1, 2], -4}, {-3.315227889746332, -1.91404771457}], 
+        Offset[{-6.928203230275509, -4}, {-3.315227889746332, \
+-1.91404771457}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2]), Rational[3, 4]}],
+       Background->Automatic], 
+      InsetBox["225", NCache[
+       Offset[{(-4) 2^Rational[1, 2], (-4) 
+          2^Rational[1, 2]}, {-2.7068722369741205`, -2.7068722369741205`}], 
+        Offset[{-5.656854249492381, -5.656854249492381}, \
+{-2.7068722369741205`, -2.7068722369741205`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 + 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["210", NCache[
+       Offset[{-4, (-4) 
+          3^Rational[1, 2]}, {-1.91404771457, -3.315227889746332}], 
+        Offset[{-4, -6.928203230275509}, {-1.91404771457, \
+-3.315227889746332}]], 
+       ImageScaled[{
+        Rational[3, 4], Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["195", NCache[
+       Offset[{(-2) 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (1 + 
+           3^Rational[1, 2])}, {-0.990784003531339, -3.6976562405054594`}], 
+        Offset[{-2.070552360820166, -7.7274066103125465`}, \
+{-0.990784003531339, -3.6976562405054594`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["180", Offset[{0, -8}, {0., -3.82809542914}], 
+       ImageScaled[{Rational[1, 2], 1}],
+       Background->Automatic], 
+      InsetBox["165", NCache[
+       Offset[{2 2^Rational[1, 2] (-1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (1 + 3^Rational[1, 2])}, {
+         0.990784003531339, -3.6976562405054594`}], 
+        Offset[{2.070552360820166, -7.7274066103125465`}, {
+         0.990784003531339, -3.6976562405054594`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["150", NCache[
+       Offset[{4, (-4) 3^Rational[1, 2]}, {
+         1.91404771457, -3.315227889746332}], 
+        Offset[{4, -6.928203230275509}, {1.91404771457, -3.315227889746332}]],
+        ImageScaled[{
+        Rational[1, 4], Rational[1, 2] (1 + Rational[1, 2] 3^Rational[1, 2])}],
+       Background->Automatic], 
+      InsetBox["135", NCache[
+       Offset[{4 2^Rational[1, 2], (-4) 2^Rational[1, 2]}, {
+         2.7068722369741205`, -2.7068722369741205`}], 
+        Offset[{5.656854249492381, -5.656854249492381}, {
+         2.7068722369741205`, -2.7068722369741205`}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 - 2^Rational[-1, 2]), 
+         Rational[1, 2] (1 + 2^Rational[-1, 2])}],
+       Background->Automatic], 
+      InsetBox["120", NCache[
+       Offset[{4 3^Rational[1, 2], -4}, {3.315227889746332, -1.91404771457}], 
+        Offset[{6.928203230275509, -4}, {3.315227889746332, -1.91404771457}]],
+        ImageScaled[{
+        Rational[1, 2] (1 + Rational[-1, 2] 3^Rational[1, 2]), Rational[
+         3, 4]}],
+       Background->Automatic], 
+      InsetBox["105", NCache[
+       Offset[{2 2^Rational[1, 2] (1 + 3^Rational[1, 2]), (-2) 
+          2^Rational[1, 2] (-1 + 3^Rational[1, 2])}, {
+         3.6976562405054594`, -0.990784003531339}], 
+        Offset[{7.7274066103125465`, -2.070552360820166}, {
+         3.6976562405054594`, -0.990784003531339}]], 
+       ImageScaled[{
+        Rational[1, 2] (1 + 
+          Rational[-1, 2] 2^Rational[-1, 2] (1 + 3^Rational[1, 2])), 
+         Rational[1, 2] (1 + 
+          Rational[1, 2] 2^Rational[-1, 2] (-1 + 3^Rational[1, 2]))}],
+       Background->Automatic], 
+      InsetBox["90", Offset[{8, 0}, {3.82809542914, 0.}], 
+       ImageScaled[{0, Rational[1, 2]}],
+       Background->Automatic]}, 
+     CircleBox[{0, 0}, 3.82809542914, 
+      NCache[{0, 2 Pi}, {0, 6.283185307179586}]]}, {}}},
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+      Mod[
+       ArcTan[
+        Part[#, 1], 
+        Part[#, 2]], 2 Pi]}& ), "CopiedValueFunction" -> ({
+      Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+      Mod[
+       ArcTan[
+        Part[#, 1], 
+        Part[#, 2]], 2 Pi]}& )},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+    StyleBox[
+    "\"Average PM10 Concentration vs. Wind Direction\"", 14, StripOnInput -> 
+     False], TraditionalForm],
+  PlotRange->{{Automatic, Automatic}, {Automatic, Automatic}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.1], 
+     Scaled[0.1]}, {
+     Scaled[0.1], 
+     Scaled[0.1]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.6958181160984244`*^9, 3.6958181564628057`*^9, 
+  3.6958429828141527`*^9, 3.6958435752148666`*^9}]
+}, Open  ]]
+},
+WindowSize->{751, 821},
+WindowMargins->{{Automatic, 181}, {70, Automatic}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 292, 7, 69, "Input"],
+Cell[CellGroupData[{
+Cell[875, 31, 3808, 82, 107, "Input"],
+Cell[4686, 115, 25716, 501, 391, "Output"]
+}, Open  ]],
+Cell[30417, 619, 94, 1, 30, "Input"],
+Cell[CellGroupData[{
+Cell[30536, 624, 1246, 33, 88, "Input"],
+Cell[31785, 659, 20082, 412, 391, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51904, 1076, 1219, 33, 88, "Input"],
+Cell[53126, 1111, 19888, 407, 391, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[73051, 1523, 1216, 33, 88, "Input"],
+Cell[74270, 1558, 20362, 419, 391, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[94669, 1982, 1247, 33, 88, "Input"],
+Cell[95919, 2017, 20043, 413, 391, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[115999, 2435, 1251, 33, 88, "Input"],
+Cell[117253, 2470, 20170, 415, 391, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[137460, 2890, 1272, 33, 88, "Input"],
+Cell[138735, 2925, 19933, 407, 391, "Output"]
+}, Open  ]]
+}
+]
+*)
+
